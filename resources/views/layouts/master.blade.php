@@ -10,10 +10,10 @@
 	<!-- Font Awesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="{{ URL::to('css/bootstrap.css') }}" rel="stylesheet">
     <!-- material -->
-    <link href="css/mdb.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="{{ URL::to('css/mdb.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::to('css/main.css') }}" rel="stylesheet">
     <link href="http://www.w3schools.com/lib/w3.css" rel="stylesheet">
 	  
     <!--[if lt IE 9]>
@@ -60,10 +60,10 @@
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="{{ URL::to('js/jquery-2.2.3.min.js') }}"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script type="text/javascript" src="js/tether.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/mdb.min.js"></script>
+	<script type="text/javascript" src="{{ URL::to('js/tether.min.js') }}"></script>
+	<script type="text/javascript" src="{{ URL::to('js/bootstrap.min.js') }}"></script>
+	<script type="text/javascript" src="{{ URL::to('js/mdb.min.js') }}"></script>
   </body>
 </html>

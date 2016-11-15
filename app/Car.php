@@ -9,8 +9,17 @@ class Car extends Model
     public $primaryKey = 'vin';
     public $incrementing = false;
 
-    public function user()
-    {
-        return $this->belongsTo('App\User', 'username', 'username');
-    }
+    protected $fillable = [
+        'vin', 'year', 'make', 'model', 'price'
+    ];
+
+    protected $hidden = ['created_at', 'updated_at'];
+
+    public static $create_validation_rules = [
+        'vin' => 'required|unique:cars',
+        'year' => 'required',
+        'make' => 'required',
+        'model' => 'required',
+        'price' => 'required'
+    ]; 
 }
