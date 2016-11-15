@@ -22,4 +22,12 @@ class Car extends Model
         'model' => 'required',
         'price' => 'required'
     ]; 
+
+    public static $update_validation_rules = [
+        'vin' => 'required',
+        'year' => 'required',
+        'make' => 'required',
+        'model' => 'required',
+        'price' => 'required'
+    ]; 
 }
