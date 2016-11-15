@@ -98,7 +98,18 @@ class CarsController extends Controller
     public function update(Request $request, $id)
     {
         //TODO finish updating car
-        return $id;
+        $this->validate($request, Car::$update_validation_rules);
+
+        $data = $request->only('vin', 'year', 'make', 'model', 'price');
+        unset($data['vin']);
+
+        if(Car::find($id)->update($data))
+        {
+            return back()->with('success', ['Car updated']);
+        }
+
+        return back()->withInput();
+
     }
 
     /**
