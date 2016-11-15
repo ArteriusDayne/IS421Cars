@@ -26,7 +26,7 @@
     <div class="md-form">
         <i class="fa prefix"></i>
         {!! Form::label('VIN') !!}
-        {!! Form::text('vin', $car['vin'], array('id' => 'form3', 'class' => 'form-control')) !!}
+        {!! Form::text('vin', $car['vin'], array('id' => 'form3', 'class' => 'form-control', 'readonly' => 'true')) !!}
     </div>
     <div class="md-form">
         <i class="fa prefix"></i>
