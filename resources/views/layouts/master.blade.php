@@ -27,7 +27,7 @@
 			<button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx"><i class="fa fa-bars"></i></button>
 			<div class="container">
 				<div class="collapse navbar-toggleable-xs" id="collapseEx">
-				<a class="navbar-brand" href="http://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">Fluffies & Puppies</a>
+				<a class="navbar-brand" href="http://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">Puppies & Fluffies</a>
 					<ul class="nav navbar-nav">
 						@if(\Auth::check())
 						<li class="nav-item {{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="/home"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a></li>
