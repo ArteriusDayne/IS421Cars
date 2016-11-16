@@ -15,6 +15,7 @@
     <link href="css/mdb.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="http://www.w3schools.com/lib/w3.css" rel="stylesheet">
+	<link rel="shortcut icon" href="{{{ asset('img/favicon.ico') }}}">
 	  
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
