@@ -18,7 +18,7 @@
         <div class="carousel-item active">
             <!--Mask color-->
             <div class="view hm-black-slight">
-                <img src="img/puppers/sized/corgi.png" class="img-fluid" alt="Corgis">
+                <img src="img/puppers/sized/corgi.jpg" class="img-fluid" alt="Corgis">
                 <div class="full-bg-img">
                 </div>
             </div>
@@ -36,7 +36,7 @@
         <div class="carousel-item">
             <!--Mask color-->
             <div class="view hm-black-slight">
-                <img src="img/puppers/sized/cutepupper.png" class="img-fluid" alt="Cute Puppy">
+                <img src="img/puppers/sized/cutepupper.jpg" class="img-fluid" alt="Cute Puppy">
                 <div class="full-bg-img">
                 </div>
             </div>
@@ -54,7 +54,7 @@
         <div class="carousel-item">
             <!--Mask color-->
             <div class="view hm-black-slight">
-                <img src="img/puppers/sized/pomsky.png" class="img-fluid" alt="pomsky">
+                <img src="img/puppers/sized/pomsky.jpg" class="img-fluid" alt="pomsky">
                 <div class="full-bg-img">
                 </div>
             </div>
@@ -72,7 +72,7 @@
         <div class="carousel-item">
             <!--Mask color-->
             <div class="view hm-black-slight">
-                <img src="img/puppers/sized/puppers.png" class="img-fluid" alt="Puppers">
+                <img src="img/puppers/sized/puppers.jpg" class="img-fluid" alt="Puppers">
                 <div class="full-bg-img">
                 </div>
             </div>
@@ -90,7 +90,7 @@
         <div class="carousel-item">
             <!--Mask color-->
             <div class="view hm-black-slight">
-                <img src="img/puppers/sized/doggo.png" class="img-fluid" alt="Doggo">
+                <img src="img/puppers/sized/doggo.jpg" class="img-fluid" alt="Doggo">
                 <div class="full-bg-img">
                 </div>
             </div>
@@ -124,7 +124,7 @@
 	<div class="card-deck-wrapper">
 		<div class="card-deck">
 			<div class="card">
-			<img class="card-img-top img" src="img/puppers/sized/pomsky.png" alt="No Cars Photos">
+			<img class="card-img-top img" src="img/puppers/sized/pomsky.jpg" alt="No Cars Photos">
 				<div class="card-block">
 					<h4 class="card-title">Card title</h4>
 					<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -132,7 +132,7 @@
 				</div>
 			</div>
 			<div class="card">
-			<img class="card-img-top img" src="img/puppers/sized/hamster-1.png" alt="No Cars Photos">
+			<img class="card-img-top img" src="img/puppers/sized/hamster-1.jpg" alt="No Cars Photos">
 				<div class="card-block">
 					<h4 class="card-title">Card title</h4>
 					<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -140,7 +140,7 @@
 				</div>
 			</div>
 			<div class="card">
-			<img class="card-img-top img" src="img/puppers/sized/doggo2.png" alt="No Cars Photos">
+			<img class="card-img-top img" src="img/puppers/sized/doggo2.jpg" alt="No Cars Photos">
 				<div class="card-block">
 					<h4 class="card-title">Card title</h4>
 					<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
