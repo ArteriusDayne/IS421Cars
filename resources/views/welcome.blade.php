@@ -18,14 +18,14 @@
         <div class="carousel-item active">
             <!--Mask color-->
             <div class="view hm-black-slight">
-                <img src="img/cars/buggati.png" class="img-fluid" alt="all American">
+                <img src="img/puppers/sized/corgi.png" class="img-fluid" alt="Corgis">
                 <div class="full-bg-img">
                 </div>
             </div>
             <!--Caption-->
             <div class="carousel-caption">
                 <div class="animated fadeInDown">
-                    <h3 class="h3-responsive">Exotic cars</h3>
+                    <h3 class="h3-responsive">Corgi Puppies</h3>
                 </div>
             </div>
             <!--Caption-->
@@ -36,14 +36,14 @@
         <div class="carousel-item">
             <!--Mask color-->
             <div class="view hm-black-slight">
-                <img src="img/cars/kia.png" class="img-fluid" alt="Kia Sales Event">
+                <img src="img/puppers/sized/cutepupper.png" class="img-fluid" alt="Cute Puppy">
                 <div class="full-bg-img">
                 </div>
             </div>
             <!--Caption-->
             <div class="carousel-caption">
                 <div class="animated fadeInDown">
-                    <h3 class="h3-responsive">Don't Miss the Kia Big Sales Event</h3>
+                    <h3 class="h3-responsive">The cutest puppies you'll ever see!</h3>
                 </div>
             </div>
             <!--Caption-->
@@ -54,14 +54,14 @@
         <div class="carousel-item">
             <!--Mask color-->
             <div class="view hm-black-slight">
-                <img src="img/cars/buycars.png" class="img-fluid" alt="we buy cars">
+                <img src="img/puppers/sized/pomsky.png" class="img-fluid" alt="pomsky">
                 <div class="full-bg-img">
                 </div>
             </div>
             <!--Caption-->
             <div class="carousel-caption">
                 <div class="animated fadeInDown">
-                    <h3 class="h3-responsive">We Buy Cars</h3>
+                    <h3 class="h3-responsive">Pomsky Puppy</h3>
                 </div>
             </div>
             <!--Caption-->
@@ -72,14 +72,14 @@
         <div class="carousel-item">
             <!--Mask color-->
             <div class="view hm-black-slight">
-                <img src="img/cars/nissan.png" class="img-fluid" alt="Nissan Z370">
+                <img src="img/puppers/sized/puppers.png" class="img-fluid" alt="Puppers">
                 <div class="full-bg-img">
                 </div>
             </div>
             <!--Caption-->
             <div class="carousel-caption">
                 <div class="animated fadeInDown">
-                    <h3 class="h3-responsive">When Speed and Style combined</h3>
+                    <h3 class="h3-responsive">The Cutest Puppies!</h3>
                 </div>
             </div>
             <!--Caption-->
@@ -90,14 +90,14 @@
         <div class="carousel-item">
             <!--Mask color-->
             <div class="view hm-black-slight">
-                <img src="img/cars/car_crv.png" class="img-fluid" alt="Honda CRV">
+                <img src="img/puppers/sized/doggo.png" class="img-fluid" alt="Doggo">
                 <div class="full-bg-img">
                 </div>
             </div>
             <!--Caption-->
             <div class="carousel-caption">
                 <div class="animated fadeInDown">
-                    <h3 class="h3-responsive">Winter is here do you need an SUV ?</h3>
+                    <h3 class="h3-responsive">Doggo</h3>
                 </div>
             </div>
             <!--Caption-->
@@ -120,11 +120,11 @@
 <!--/.Carousel Wrapper-->
 @endsection
 @section('page_content')
-	<h1 style="text-align:center">Best Sellers</h1>
+	<h1 style="text-align:center">Fluffies!</h1>
 	<div class="card-deck-wrapper">
 		<div class="card-deck">
 			<div class="card">
-			<img class="card-img-top img" src="img/cars/buggati.png" alt="No Cars Photos">
+			<img class="card-img-top img" src="img/puppers/sized/pomsky.png" alt="No Cars Photos">
 				<div class="card-block">
 					<h4 class="card-title">Card title</h4>
 					<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -132,7 +132,7 @@
 				</div>
 			</div>
 			<div class="card">
-			<img class="card-img-top img" src="img/cars/buggati.png" alt="No Cars Photos">
+			<img class="card-img-top img" src="img/puppers/sized/hamster-1.png" alt="No Cars Photos">
 				<div class="card-block">
 					<h4 class="card-title">Card title</h4>
 					<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -140,7 +140,7 @@
 				</div>
 			</div>
 			<div class="card">
-			<img class="card-img-top img" src="img/cars/buggati.png" alt="No Cars Photos">
+			<img class="card-img-top img" src="img/puppers/sized/doggo2.png" alt="No Cars Photos">
 				<div class="card-block">
 					<h4 class="card-title">Card title</h4>
 					<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
