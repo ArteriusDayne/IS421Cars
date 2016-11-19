@@ -1,2 +1,4 @@
-# is421cars
-laravel 5.2 project
+# Puppies & Fluffies
+
+
+Laravel 5.2 Project, IS 421
