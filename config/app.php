@@ -148,6 +148,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        MaddHatter\LaravelFullcalendar\ServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
 
         /*
