@@ -5,15 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Puppies & Fluffies {{Request::is('/') ? 'Home' : Request::path() }} Page</title>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="331709663044-ri6basml00uvrrvsto2i03dukd56um3m.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+	<title>Puppies & Fluffies {{Request::is('/') ? 'Home' : Request::path() }} Page</title>
 
 	<!-- Font Awesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="{{ URL::to('css/bootstrap.css') }}" rel="stylesheet">
     <!-- material -->
-    <link href="css/mdb.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="{{ URL::to('css/mdb.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::to('css/main.css') }}" rel="stylesheet">
     <link href="http://www.w3schools.com/lib/w3.css" rel="stylesheet">
 	<link rel="shortcut icon" href="{{{ asset('img/favicon.ico') }}}">
 	  
@@ -62,10 +65,10 @@
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="{{ URL::to('js/jquery-2.2.3.min.js') }}"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script type="text/javascript" src="js/tether.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/mdb.min.js"></script>
+	<script type="text/javascript" src="{{ URL::to('js/tether.min.js') }}"></script>
+	<script type="text/javascript" src="{{ URL::to('js/bootstrap.min.js') }}"></script>
+	<script type="text/javascript" src="{{ URL::to('js/mdb.min.js') }}"></script>
   </body>
 </html>

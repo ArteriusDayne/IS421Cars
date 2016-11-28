@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -10,9 +9,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
 Route::get('/','PagesController@welcome');
-
 	Route::get('/login', ['as' => 'login', 'uses' => 'AuthController@login']);
 	Route::post('/handleLogin', ['as' => 'handleLogin', 'uses' => 'AuthController@handleLogin']);
 	Route::get('/home', ['middleware' => 'auth', 'as' => 'home', 'uses' => 'UsersController@home']);
