@@ -38,11 +38,6 @@ class User extends Authenticatable
         'password' => 'required'
     ];    
 
-    public function cars()
-    {
-        return $this->hasMany('App\Car', 'username', 'username');
-    }
-
     public function sales()
     {
         return $this->hasMany('App\Sale', 'username', 'username');

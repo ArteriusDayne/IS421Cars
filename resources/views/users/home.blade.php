@@ -123,11 +123,13 @@
 	<h1 style="text-align:center">Best Sellers</h1>
 	<h3 style="text-align:center">Welcome, {{ $firstName . " " . $lastName }}</h3>
 
-	@if(\Auth::user()->hasRole('admin'))
-		<br>
-		@include('admin.users')
-	@endif
+    @role('admin')
+        <br>
+        @include('admin.users')
+    @endrole
 
+    @role('salesPerson')
+        {{ link_to_route('cars.create', 'Add Car to Inventory') }}
 	<br>
 
 	<h4>Sales</h4>
@@ -157,6 +159,7 @@
 			@endforeach
 		</tbody>
 	</table>
+    @endrole
 <div class="card-deck-wrapper">
 		<div class="card-deck">
 			<div class="card">
