@@ -3360,6 +3360,7 @@
         "homepage": "https://symfony.com"
     },
     {
+
         "name": "zizaco/entrust",
         "version": "5.2.x-dev",
         "version_normalized": "5.2.9999999.9999999-dev",
@@ -3395,6 +3396,40 @@
             ],
             "psr-4": {
                 "Zizaco\\Entrust\\": "src/Entrust/"
+
+        "name": "ipunkt/laravel-analytics",
+        "version": "1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ipunkt/laravel-analytics.git",
+            "reference": "35193df6f4371a694ccc0f022bcb679a37847eac"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ipunkt/laravel-analytics/zipball/35193df6f4371a694ccc0f022bcb679a37847eac",
+            "reference": "35193df6f4371a694ccc0f022bcb679a37847eac",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/config": "~5.0",
+            "illuminate/session": "~5.0",
+            "illuminate/support": "~5.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "laravel/framework": "~5.0"
+        },
+        "suggest": {
+            "martijnc/php-csp": "For handling Content Security Policy matters"
+        },
+        "time": "2016-11-03 07:42:58",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Ipunkt\\LaravelAnalytics\\": "src/"
+
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -3403,6 +3438,7 @@
         ],
         "authors": [
             {
+
                 "name": "Andrew Elkins",
                 "homepage": "http://andrewelkins.com"
             },
@@ -3427,6 +3463,19 @@
             "laravel",
             "permission",
             "roles"
+
+                "name": "Robert Kummer",
+                "email": "r.kummer@ipunkt.biz"
+            }
+        ],
+        "description": "Analytics tracking for Laravel",
+        "keywords": [
+            "analytics",
+            "google analytics",
+            "javascript",
+            "laravel",
+            "php",
+            "statistics"
         ]
     }
 ]

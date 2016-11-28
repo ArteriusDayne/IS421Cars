@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>ABC Dealership {{Request::is('/') ? 'Home' : Request::path() }} Page</title>
+    <title>Puppies & Fluffies {{Request::is('/') ? 'Home' : Request::path() }} Page</title>
 
 	<!-- Font Awesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
 			<button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx"><i class="fa fa-bars"></i></button>
 			<div class="container">
 				<div class="collapse navbar-toggleable-xs" id="collapseEx">
-				<a class="navbar-brand" href="http://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">ABC Dealership</a>
+				<a class="navbar-brand" href="http://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">Puppies & Fluffies</a>
 					<ul class="nav navbar-nav">
 						<li class="nav-item {{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="/"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a></li>
 						<li class="nav-item {{Request::is('inventory') ? 'active' : ''}}"><a class="nav-link" href="/inventory"><i class="fa fa-car" aria-hidden="true"></i> Stock </a></li>

@@ -8,7 +8,7 @@
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="331709663044-ri6basml00uvrrvsto2i03dukd56um3m.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <title>ABC Dealership {{Request::is('/') ? 'Home' : Request::path() }} Page</title>
+	<title>Puppies & Fluffies {{Request::is('/') ? 'Home' : Request::path() }} Page</title>
 
 	<!-- Font Awesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
@@ -18,11 +18,13 @@
     <link href="{{ URL::to('css/mdb.min.css') }}" rel="stylesheet">
     <link href="{{ URL::to('css/main.css') }}" rel="stylesheet">
     <link href="http://www.w3schools.com/lib/w3.css" rel="stylesheet">
+	<link rel="shortcut icon" href="{{{ asset('img/favicon.ico') }}}">
 	  
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    {!! Analytics::render() !!}
   </head>
   <body>
 	  <header>
@@ -30,14 +32,14 @@
 			<button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx"><i class="fa fa-bars"></i></button>
 			<div class="container">
 				<div class="collapse navbar-toggleable-xs" id="collapseEx">
-				<a class="navbar-brand" href="http://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">ABC Dealership</a>
+				<a class="navbar-brand" href="#" target="_blank">Puppies & Fluffies</a>
 					<ul class="nav navbar-nav">
 						@if(\Auth::check())
 						<li class="nav-item {{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="/home"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a></li>
 						@else
 							<li class="nav-item {{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="/"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a></li>
 						@endif
-						<li class="nav-item {{Request::is('inventory') ? 'active' : ''}}"><a class="nav-link" href="/inventory"><i class="fa fa-car" aria-hidden="true"></i> Stock </a></li>
+						<li class="nav-item {{Request::is('inventory') ? 'active' : ''}}"><a class="nav-link" href="/inventory"><i class="fa fa-paw" aria-hidden="true"></i> Adoptions </a></li>
 						<li class="nav-item {{Request::is('schedule') ? 'active' : ''}}"><a class="nav-link" href="/schedule"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Appointments</a></li>
 						<li class="nav-item {{Request::is('about') ? 'active' : ''}}"><a class="nav-link" href="/about"><i class="fa fa-info" aria-hidden="true"></i> About</a></li>
 						<li class="nav-item {{Request::is('contact') ? 'active' : ''}}"><a class="nav-link" href="/contact"><i class="fa fa-volume-control-phone" aria-hidden="true"></i> Contact</a></li>
