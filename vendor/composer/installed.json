@@ -1632,7 +1632,8 @@
         "time": "2016-04-29 12:21:54",
         "type": "library",
         "extra": {
-            "branch-alias": []
+            "branch-alias": [
+            ]
         },
         "installation-source": "dist",
         "autoload": {
@@ -3360,19 +3361,18 @@
         "homepage": "https://symfony.com"
     },
     {
-
         "name": "zizaco/entrust",
         "version": "5.2.x-dev",
         "version_normalized": "5.2.9999999.9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/Zizaco/entrust.git",
-            "reference": "7455ed41fe448c37c6a5bcd41a584c1f92d428a3"
+            "reference": "b749bff868026336dec1ba1a16c150728697353d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Zizaco/entrust/zipball/7455ed41fe448c37c6a5bcd41a584c1f92d428a3",
-            "reference": "7455ed41fe448c37c6a5bcd41a584c1f92d428a3",
+            "url": "https://api.github.com/repos/Zizaco/entrust/zipball/b749bff868026336dec1ba1a16c150728697353d",
+            "reference": "b749bff868026336dec1ba1a16c150728697353d",
             "shasum": ""
         },
         "require": {
@@ -3387,7 +3387,7 @@
             "phpunit/phpunit": "~4.1",
             "sami/sami": "dev-master"
         },
-        "time": "2016-11-04 16:23:22",
+        "time": "2016-03-24 15:24:42",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -3396,7 +3396,41 @@
             ],
             "psr-4": {
                 "Zizaco\\Entrust\\": "src/Entrust/"
-
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Andrew Elkins",
+                "homepage": "http://andrewelkins.com"
+            },
+            {
+                "name": "Zizaco Zizuini",
+                "email": "zizaco@gmail.com"
+            },
+            {
+                "name": "Ben Batschelet",
+                "homepage": "http://github.com/bbatsche"
+            },
+            {
+                "name": "Michele Angioni",
+                "email": "michele.angioni@gmail.com"
+            }
+        ],
+        "description": "This package provides a flexible way to add Role-based Permissions to Laravel",
+        "keywords": [
+            "acl",
+            "auth",
+            "illuminate",
+            "laravel",
+            "permission",
+            "roles"
+        ]
+    },
+    {
         "name": "ipunkt/laravel-analytics",
         "version": "1.3.0",
         "version_normalized": "1.3.0.0",
@@ -3429,7 +3463,6 @@
         "autoload": {
             "psr-0": {
                 "Ipunkt\\LaravelAnalytics\\": "src/"
-
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -3438,32 +3471,6 @@
         ],
         "authors": [
             {
-
-                "name": "Andrew Elkins",
-                "homepage": "http://andrewelkins.com"
-            },
-            {
-                "name": "Zizaco Zizuini",
-                "email": "zizaco@gmail.com"
-            },
-            {
-                "name": "Ben Batschelet",
-                "homepage": "http://github.com/bbatsche"
-            },
-            {
-                "name": "Michele Angioni",
-                "email": "michele.angioni@gmail.com"
-            }
-        ],
-        "description": "This package provides a flexible way to add Role-based Permissions to Laravel",
-        "keywords": [
-            "acl",
-            "auth",
-            "illuminate",
-            "laravel",
-            "permission",
-            "roles"
-
                 "name": "Robert Kummer",
                 "email": "r.kummer@ipunkt.biz"
             }
