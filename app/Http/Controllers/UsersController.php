@@ -101,8 +101,6 @@ class UsersController extends Controller
 
     public function home()
     {
-        return view('users.home', ['firstName' => \Auth::user()->firstName, 
-                                   'lastName' => \Auth::user()->lastName,
-                                   ]);
+        return view('users.home', ['name' => \Auth::user()->name]);
     }
 }
