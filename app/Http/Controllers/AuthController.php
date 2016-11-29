@@ -27,7 +27,7 @@ class AuthController extends Controller
     	}
 
     	//return to form if login unsucessful
-    	return back()->withInput()->withErrors(['email' => 'Username or password invalid']);
+    	return back()->withInput()->withErrors(['email' => 'Email or password invalid']);
     }
 
     public function logout()
