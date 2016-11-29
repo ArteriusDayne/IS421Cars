@@ -19,7 +19,7 @@ class AuthController extends Controller
     {
         $this->validate($request, User::$login_validation_rules);
 
-    	$data = $request->only('username', 'password');
+    	$data = $request->only('email', 'password');
 
     	//attempt login
     	if(\Auth::attempt($data)){
@@ -27,7 +27,7 @@ class AuthController extends Controller
     	}
 
     	//return to form if login unsucessful
-    	return back()->withInput()->withErrors(['username' => 'Username or password invalid']);
+    	return back()->withInput()->withErrors(['email' => 'Username or password invalid']);
     }
 
     public function logout()
