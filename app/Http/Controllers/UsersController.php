@@ -103,6 +103,6 @@ class UsersController extends Controller
     {
         return view('users.home', ['firstName' => \Auth::user()->firstName, 
                                    'lastName' => \Auth::user()->lastName,
-                                   'sales' => Sale::where('username', \Auth::user()->username)->get()]);
+                                   ]);
     }
 }
