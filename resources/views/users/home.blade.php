@@ -8,4 +8,13 @@
         @include('admin.users')
     @endrole
 
+    @if( !\Auth::user()->hasRole('provider') )
+        <a href="#">Request to be a Provider!</a><br>
+    @endif
+
+    @if( !\Auth::user()->hasRole('adopter') )
+        <a href="#">Request to be an Adopter!</a><br>
+    @endif
+   
+
 @endsection
