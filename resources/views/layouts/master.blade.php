@@ -35,7 +35,7 @@
 				<a class="navbar-brand" href="/" >Puppies & Fluffies</a>
 					<ul class="nav navbar-nav">
 						@if(\Auth::check())
-						<li class="nav-item {{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="/home"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a></li>
+						<li class="nav-item {{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="/home"><i class="fa fa-home" aria-hidden="true"></i> Account <span class="sr-only">(current)</span></a></li>
 						@else
 							<li class="nav-item {{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="/"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a></li>
 						@endif
