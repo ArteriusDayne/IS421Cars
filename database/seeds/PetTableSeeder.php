@@ -26,5 +26,41 @@ class PetTableSeeder extends Seeder
         	'description' => 'a dog',
         	]);
 
+        Pet::create([
+            'userid' => 2,
+            'name' => 'Tinkles',
+            'type' => 1,
+            'dob' => '2003-04-03',
+            'weight' => 3.2,
+            'height' => 3.5,
+            'location' => 'Texas',
+            'available' => 1,
+            'description' => 'a cat',
+            ]);     
+
+        Pet::create([
+            'userid' => 2,
+            'name' => 'Winkles',
+            'type' => 1,
+            'dob' => '2003-04-03',
+            'weight' => 3.2,
+            'height' => 3.5,
+            'location' => 'Texas',
+            'available' => 1,
+            'description' => 'a cat',
+            ]);     
+
+        Pet::create([
+            'userid' => 2,
+            'name' => 'Pinkles',
+            'type' => 1,
+            'dob' => '2009-04-03',
+            'weight' => 2.2,
+            'height' => 1.5,
+            'location' => 'Newark',
+            'available' => 1,
+            'description' => 'a rabbit',
+            ]);  
+
     }
 }
