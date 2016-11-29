@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'password', 'firstName', 'lastName'
+        'email', 'password', 'firstName', 'lastName'
     ];
 
     /**
@@ -28,17 +28,13 @@ class User extends Authenticatable
     ];
 
     public static $login_validation_rules = [
-        'username' => 'required|exists:users',
+        'email' => 'required|exists:users',
         'password' => 'required'
     ];
 
     public static $create_validation_rules = [
-        'username' => 'required|unique:users',
+        'email' => 'required|unique:users',
         'password' => 'required'
     ];    
 
-    public function sales()
-    {
-        return $this->hasMany('App\Sale', 'username', 'username');
-    }
 }
