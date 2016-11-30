@@ -17,7 +17,7 @@
     <!-- material -->
     <link href="{{ URL::to('css/mdb.min.css') }}" rel="stylesheet">
     <link href="{{ URL::to('css/main.css') }}" rel="stylesheet">
-    <link href="http://www.w3schools.com/lib/w3.css" rel="stylesheet">
+    <link href="https://www.w3schools.com/lib/w3.css" rel="stylesheet">
 	<link rel="shortcut icon" href="{{{ asset('img/favicon.ico') }}}">
 	  
     <!--[if lt IE 9]>
