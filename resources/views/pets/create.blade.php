@@ -17,57 +17,51 @@
             </div>
 
 
-            {!! Form::open(array('route' => 'users.store')) !!}
+            {!! Form::open(array('action' => 'PetsController@store','files'=>true)) !!}
             <div class="md-form">
                 <i class="fa fa-user prefix"></i>
-                {!! Form::label('First Name') !!}
-                {!! Form::text('firstName', null, array('id' => 'form3', 'class' => 'form-control')) !!}
+                {!! Form::label('Name') !!}
+                {!! Form::text('name', null, array('id' => 'form3', 'class' => 'form-control')) !!}
             </div>
             <div class="md-form">
                 <i class="fa fa-user prefix"></i>
-                {!! Form::label('Last Name') !!}
-                {!! Form::text('lastName', null, array('id' => 'form3', 'class' => 'form-control')) !!}
+                {!! Form::label('Date of Birth') !!}
+                {!! Form::text('dob', null, array('id' => 'form3', 'class' => 'form-control')) !!}
             </div>
             <div class="md-form">
                 <i class="fa fa-envelope prefix"></i>
-                {!! Form::label('username', 'Your username') !!}
-                {!! Form::text('username', null, array('id' => 'form2', 'class' => 'form-control')) !!}
+                {!! Form::label('weight', 'Weight') !!}
+                {!! Form::text('weight', null, array('id' => 'form2', 'class' => 'form-control')) !!}
             </div>
             <div class="md-form">
-                <i class="fa fa-lock prefix"></i>
-                {!! Form::label('password') !!}
-                {!! Form::password('password', array('id' => 'form4', 'class' => 'form-control')) !!}
+                <i class="fa fa-envelope prefix"></i>
+                {!! Form::label('height', 'Height') !!}
+                {!! Form::text('height', null, array('id' => 'form2', 'class' => 'form-control')) !!}
             </div>
+            <div class="md-form">
+                <i class="fa fa-envelope prefix"></i>
+                {!! Form::label('location', 'Location') !!}
+                {!! Form::text('location', null, array('id' => 'form2', 'class' => 'form-control')) !!}
+            </div>
+            <div class="md-form">
+                <i class="fa fa-envelope prefix"></i>
+                {!! Form::label('description', 'Description') !!}
+                {!! Form::text('description', null, array('id' => 'form2', 'class' => 'form-control')) !!}
+            </div>
+
+            <div class="md-form">
+            <i class="fa fa-envelope prefix"></i>
+      
+                {!! Form::file('image', null, array('id' => 'form2', 'class' => 'form-control')) !!}
+                <p class="errors">{!!$errors->first('image')!!}</p>
+            </div>            
+
             <div class="text-xs-center">
                 {!! Form::token() !!}
-                {!! Form::submit('Sign Up!', array('class' => 'btn btn-primary')) !!}
+                {!! Form::submit('Submit', array('class' => 'btn btn-primary')) !!}
                 {!! Form::close() !!}
             </div>
-            <div class="about-section">
-                <div class="text-content">
-                    <div class="span7 offset1">
-                        @if(Session::has('success'))
-                            <div class="alert-box success">
-                                <h2>{!! Session::get('success') !!}</h2>
-                            </div>
-                        @endif
-                        <div class="secure">Upload Pet</div>
-                        {!! Form::open(array('url'=>'apply/upload','method'=>'POST', 'files'=>true)) !!}
-                        <div class="control-group">
-                            <div class="controls">
-                                {!! Form::file('image') !!}
-                                <p class="errors">{!!$errors->first('image')!!}</p>
-                                @if(Session::has('error'))
-                                    <p class="errors">{!! Session::get('error') !!}</p>
-                                @endif
-                            </div>
-                        </div>
-                        <div id="success"> </div>
-                        {!! Form::submit('Upload', array('class'=>'send-btn')) !!}
-                        {!! Form::close() !!}
-                    </div>
-                </div>
-            </div>
+
         </div>
         <!--Footer-->
         <div class="modal-footer">
