@@ -18,18 +18,18 @@
   {!! Form::open(array('route' => 'users.store')) !!}
     <div class="md-form">
 		<i class="fa fa-user prefix"></i>
-        {!! Form::label('First Name') !!}
-        {!! Form::text('firstName', null, array('id' => 'form3', 'class' => 'form-control')) !!}
+        {!! Form::label('First and Last Name') !!}
+        {!! Form::text('name', null, array('id' => 'form3', 'class' => 'form-control')) !!}
     </div>
     <div class="md-form">
-		<i class="fa fa-user prefix"></i>
-        {!! Form::label('Last Name') !!}
-        {!! Form::text('lastName', null, array('id' => 'form3', 'class' => 'form-control')) !!}
+		<i class="fa fa-phone prefix"></i>
+        {!! Form::label('Your telephone number') !!}
+        {!! Form::text('telephone', null, array('id' => 'form3', 'class' => 'form-control')) !!}
     </div>
 	<div class="md-form">
 		<i class="fa fa-envelope prefix"></i>
-        {!! Form::label('username', 'Your username') !!}
-        {!! Form::text('username', null, array('id' => 'form2', 'class' => 'form-control')) !!}
+        {!! Form::label('email', 'Your email address') !!}
+        {!! Form::text('email', null, array('id' => 'form2', 'class' => 'form-control')) !!}
     </div>
     <div class="md-form">
 	  <i class="fa fa-lock prefix"></i>
@@ -45,7 +45,7 @@
 <!--Footer-->
     <div class="modal-footer">
         <div class="options">
-            <p>Already a member <a href="/login">Sign In</a></p>
+            <p>Already a member? <a href="/login">Sign In</a></p>
             <p>NewsLetter <a href="/subscribe">Subscribe Me</a></p>
         </div>
     </div>

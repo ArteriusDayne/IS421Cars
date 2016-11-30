@@ -148,7 +148,10 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        MaddHatter\LaravelFullcalendar\ServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
+        Ipunkt\LaravelAnalytics\AnalyticsServiceProvider::class,
+
 
         /*
          * Application Service Providers...
@@ -206,6 +209,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'Analytics' => Ipunkt\LaravelAnalytics\AnalyticsFacade::class,
 
     ],
 
