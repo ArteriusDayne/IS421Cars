@@ -24,6 +24,7 @@ class CreatePetsTable extends Migration
         $table->string('location', 100);
         $table->tinyInteger('available')->default(0);
         $table->string('description', 1000);
+        $table->string('image');
         $table->timestamps();
         });
 
