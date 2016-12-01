@@ -16,7 +16,7 @@
     <link href="{{ URL::to('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- material -->
     <link href="{{ URL::to('https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/css/mdb.min.css') }}" rel="stylesheet">
-    <link href="{{ URL::to('css/main.css') }}" rel="stylesheet">
+    <link href="{{ URL::to('https://dl.dropboxusercontent.com/s/jfd5alqs3yw2p54/main.css') }}" rel="stylesheet">
     <link href="https://www.w3schools.com/lib/w3.css" rel="stylesheet">
 	<link rel="shortcut icon" href="{{{ asset('img/favicon.ico') }}}">
 	  
