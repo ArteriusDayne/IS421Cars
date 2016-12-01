@@ -13,9 +13,9 @@
 	<!-- Font Awesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Bootstrap -->
-    <link href="{{ URL::to('css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ URL::to('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- material -->
-    <link href="{{ URL::to('css/mdb.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::to('https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/css/mdb.min.css') }}" rel="stylesheet">
     <link href="{{ URL::to('css/main.css') }}" rel="stylesheet">
     <link href="https://www.w3schools.com/lib/w3.css" rel="stylesheet">
 	<link rel="shortcut icon" href="{{{ asset('img/favicon.ico') }}}">
@@ -65,10 +65,10 @@
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script type="text/javascript" src="{{ URL::to('js/jquery-2.2.3.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js') }}"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script type="text/javascript" src="{{ URL::to('js/tether.min.js') }}"></script>
-	<script type="text/javascript" src="{{ URL::to('js/bootstrap.min.js') }}"></script>
-	<script type="text/javascript" src="{{ URL::to('js/mdb.min.js') }}"></script>
+	<script type="text/javascript" src="{{ URL::to('https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.8/js/tether.min.js') }}"></script>
+	<script type="text/javascript" src="{{ URL::to('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js') }}"></script>
+	<script type="text/javascript" src="{{ URL::to('https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/js/mdb.min.js') }}"></script>
   </body>
 </html>
