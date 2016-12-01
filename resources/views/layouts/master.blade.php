@@ -13,7 +13,7 @@
 	<!-- Font Awesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Bootstrap -->
-    <link href="{{ URL::to('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::to('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- material -->
     <link href="{{ URL::to('https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/css/mdb.min.css') }}" rel="stylesheet">
     <link href="{{ URL::to('css/main.css') }}" rel="stylesheet">
@@ -67,8 +67,8 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script type="text/javascript" src="{{ URL::to('https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js') }}"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script type="text/javascript" src="{{ URL::to('https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.8/js/tether.min.js') }}"></script>
-	<script type="text/javascript" src="{{ URL::to('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js') }}"></script>
+	<script type="text/javascript" src="{{ URL::to('https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.js') }}"></script>
+	<script type="text/javascript" src="{{ URL::to('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js') }}"></script>
 	<script type="text/javascript" src="{{ URL::to('https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/js/mdb.min.js') }}"></script>
   </body>
 </html>
