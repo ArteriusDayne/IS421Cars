@@ -48,7 +48,7 @@ class PetsController extends Controller
         $data = $request->only('name', 'dob', 'weight', 'height', 'location', 'description');
 
         $data['userid'] = \Auth::user()->id;
-        $data['image'] = 'test.png';
+        $data['image'] = 'test.jpg';
 
         //get new pet id and generate unique image name
         $pet = Pet::create($data);
