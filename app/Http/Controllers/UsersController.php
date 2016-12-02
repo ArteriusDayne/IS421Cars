@@ -28,7 +28,13 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+		if(\Auth::check()){
+			return redirect()->route('home');
+		}
+		else{
+			return view('users.create'); 
+		}
+        
     }
 
     /**
