@@ -44,6 +44,8 @@ class PetsController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, Pet::$create_validation_rules);
+
         //insert pet details w/o photo - (current user ID)
         $data = $request->only('name', 'dob', 'weight', 'height', 'location', 'description');
 
