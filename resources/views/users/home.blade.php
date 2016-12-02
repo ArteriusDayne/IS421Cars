@@ -10,6 +10,8 @@
 
 @if( !\Auth::user()->hasRole('provider') )
 <a href="#">Request to be a Provider!</a><br>
+@else
+<a href="/pets/create">Add new pet for Adoption</a><br>
 @endif
 
 @if( !\Auth::user()->hasRole('adopter') )
