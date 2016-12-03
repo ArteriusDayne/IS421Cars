@@ -24,6 +24,7 @@ class PetTableSeeder extends Seeder
         	'location' => 'hell',
         	'available' => 0,
         	'description' => 'a dog',
+            'image' => 'test1.jpg',
         	]);
 
         Pet::create([
@@ -36,6 +37,7 @@ class PetTableSeeder extends Seeder
             'location' => 'Texas',
             'available' => 1,
             'description' => 'a cat',
+            'image' => 'test2.jpg',
             ]);     
 
         Pet::create([
@@ -48,6 +50,7 @@ class PetTableSeeder extends Seeder
             'location' => 'Texas',
             'available' => 1,
             'description' => 'a cat',
+            'image' => 'test3.jpg',
             ]);     
 
         Pet::create([
@@ -60,6 +63,7 @@ class PetTableSeeder extends Seeder
             'location' => 'Newark',
             'available' => 1,
             'description' => 'a rabbit',
+            'image' => 'test4.jpg',
             ]);  
 
     }
