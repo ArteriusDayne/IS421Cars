@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Pet;
+use Entrust;
+use Redirect;
 
 class PetsController extends Controller
 {
@@ -26,7 +28,12 @@ class PetsController extends Controller
      */
     public function create()
     {
-        return view('pets.create');
+        if(Entrust::hasRole('provider'))
+        {
+            return view('pets.create');
+        }
+
+        return Redirect::to('/');
     }
 
     /**
@@ -37,7 +44,33 @@ class PetsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, Pet::$create_validation_rules);
+
+        //insert pet details w/o photo - (current user ID)
+        $data = $request->only('name', 'dob', 'weight', 'height', 'location', 'description');
+
+        $data['userid'] = \Auth::user()->id;
+        $data['image'] = 'test.jpg';
+
+        //get new pet id and generate unique image name
+        $pet = Pet::create($data);
+
+        if($pet)
+        {
+            $img = $request->file('image');
+            $destinationPath = 'img/animals/providerUpload';
+            $imgName = 'pet-'. $pet->id . '-'.$img->getClientOriginalName();
+            $img->move($destinationPath, $imgName);
+            
+            //update pet to have its image field point to right place
+            $pet->image = $imgName;
+            $pet->save();  
+
+            return back()->with('success', ['Pet added for adoption!']);
+        }
+
+        return back()->withInput(); 
+
     }
 
     /**
@@ -48,7 +81,7 @@ class PetsController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -84,4 +117,6 @@ class PetsController extends Controller
     {
         //
     }
+
+
 }

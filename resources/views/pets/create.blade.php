@@ -18,6 +18,13 @@
 
 
         {!! Form::open(array('action' => 'PetsController@store','files'=>true)) !!}
+        @if (\Session::has('success'))
+        <div class="alert alert-success">
+            <ul>
+                <li>{{ \Session::get('success')[0] }}</li>
+            </ul>
+        </div>
+        @endif
         <div class="md-form">
             <i class="fa fa-user prefix"></i>
             {!! Form::label('Name') !!}
