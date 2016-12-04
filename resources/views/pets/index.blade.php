@@ -1,69 +1,27 @@
 @extends('layouts.master')
 @section('page_content')
 
-{{ $pets }}
+<div class="card-deck-wrapper">
+    <div class="card-deck">
+		<div class="row">
+			@foreach($pets as $pet)
+				<div class ="col-md-3" style="padding:0;">
+						<div class="card">
+							<img class="card-img-top img" src="img/puppers/sized/puppers.jpg" alt="No Cars Photos">
+							<div class="card-block">
+								<h4 class="card-title">{{ $pet['name'] }}</h4>
+								<p class="text-muted text-center">
+								{{ $pet['description'] }}
+								<br>
+								Location: {{ $pet['location'] }}</p>
+								<a href="#">View more details</a>
+							</div>
+						</div>
+						<br>
+				</div>
+			@endforeach
+		</div>
+    </div>
+</div>
 
-<div class="card-deck-wrapper">
-    <div class="card-deck">
-        <div class="card">
-            <img class="card-img-top img" src="img/puppers/sized/puppers.jpg" alt="No Cars Photos">
-            <div class="card-block">
-                <p class="text-muted text-center">Price: $1,000</p>
-                <div class="checkbox">
-                    <label><input type="checkbox" value=" "> Select to Compare</label>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top img" src="img/puppers/sized/puppers.jpg" alt="No Cars Photos">
-            <div class="card-block">
-                <p class="text-muted text-center">Price: $1,000</p>
-                <div class="checkbox">
-                    <label><input type="checkbox" value=" "> Select to Compare</label>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top img" src="img/puppers/sized/puppers.jpg" alt="No Cars Photos">
-            <div class="card-block">
-                <p class="text-muted text-center">Price: $1,000</p>
-                <div class="checkbox">
-                    <label><input type="checkbox" value=" "> Select to Compare</label>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- cards-->
-<div class="card-deck-wrapper">
-    <div class="card-deck">
-        <div class="card">
-            <img class="card-img-top img" src="img/puppers/sized/puppers.jpg" alt="No Cars Photos">
-            <div class="card-block">
-                <p class="text-muted text-center">Price: $1,000</p>
-                <div class="checkbox">
-                    <label><input type="checkbox" value=" "> Select to Compare</label>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top img" src="img/puppers/sized/puppers.jpg" alt="No Cars Photos">
-            <div class="card-block">
-                <p class="text-muted text-center">Price: $1,000</p>
-                <div class="checkbox">
-                    <label><input type="checkbox" value=" "> Select to Compare</label>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top img" src="img/puppers/sized/puppers.jpg" alt="No Cars Photos">
-            <div class="card-block">
-                <p class="text-muted text-center">Price: $1,000</p>
-                <div class="checkbox">
-                    <label><input type="checkbox" value=" "> Select to Compare</label>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 @stop
