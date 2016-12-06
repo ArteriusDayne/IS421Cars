@@ -7,7 +7,10 @@
 			@foreach($pets as $pet)
 				<div class ="col-md-3" style="padding:0;">
 						<div class="card">
-							<img class="card-img-top img" src="img/puppers/sized/puppers.jpg" alt="No Cars Photos">
+							
+							<img class="card-img-top img" src="{{ asset('img/animals/providerUpload/').'/'. $pet['image'] }}" alt="No Cars Photos">
+
+
 							<div class="card-block">
 								<h4 class="card-title">{{ $pet['name'] }}</h4>
 								<p class="text-muted text-center">
