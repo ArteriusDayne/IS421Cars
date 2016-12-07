@@ -34,4 +34,7 @@ class PagesController extends Controller
 	public function sale(){
 		return view('sale');
 	}
+	public function details(){
+		return view('details');
+	}
 }
