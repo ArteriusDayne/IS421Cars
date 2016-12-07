@@ -6,6 +6,8 @@ use Carbon\Carbon;
 
 class PetTableSeeder extends Seeder
 {
+	//public $img = 'test';
+
     /**
      * Run the database seeds.
      *
@@ -13,6 +15,9 @@ class PetTableSeeder extends Seeder
      */
     public function run()
     {
+    	   $img = 
+     Image::make('http://cdn1-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-2.jpg')->encode('data-url');
+
         \DB::table('pets')->delete();
         Pet::create([
         	'userid' => 1,
@@ -24,7 +29,7 @@ class PetTableSeeder extends Seeder
         	'location' => 'hell',
         	'available' => 0,
         	'description' => 'a dog',
-            'image' => 'test1.jpg',
+            'image' => $img,
         	]);
 
         Pet::create([
@@ -37,7 +42,7 @@ class PetTableSeeder extends Seeder
             'location' => 'Texas',
             'available' => 1,
             'description' => 'a cat',
-            'image' => 'test2.jpg',
+            'image' => $img,
             ]);     
 
         Pet::create([
@@ -50,7 +55,7 @@ class PetTableSeeder extends Seeder
             'location' => 'Texas',
             'available' => 1,
             'description' => 'a cat',
-            'image' => 'test3.jpg',
+            'image' => $img,
             ]);     
 
         Pet::create([
@@ -63,7 +68,7 @@ class PetTableSeeder extends Seeder
             'location' => 'Newark',
             'available' => 1,
             'description' => 'a rabbit',
-            'image' => 'test4.jpg',
+            'image' => $img,
             ]);  
 
     }
