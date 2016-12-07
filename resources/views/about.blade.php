@@ -1,29 +1,25 @@
 @extends('layouts.master')
 @section('page_content')
+	<html>
 <div class="card">
 	<div class="card-block">
-		<h2 style="text-align:center;">Lorem Ipsum</h2>
-		<p style="text-align:center;">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."<br/>
-			"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</p><hr>
-		<p>Integer auctor urna quis laoreet malesuada. Quisque ut mi diam. Ut justo erat, consequat quis placerat id, elementum nec felis. Maecenas risus nisi, laoreet id hendrerit quis, laoreet a libero. Integer a metus efficitur, luctus quam ut, cursus sem. Proin vel pharetra turpis, sit amet malesuada sapien. Vivamus eget porta sem. Cras non sagittis lacus. Pellentesque a augue a magna fringilla blandit. Duis volutpat, nisl ac suscipit luctus, sapien nisl dignissim nulla, eget posuere ipsum sapien vitae sem. Integer eu eros orci. Pellentesque vitae aliquet purus, eu iaculis arcu. Proin egestas odio nec tempus varius. Nunc rutrum lobortis velit. Fusce viverra mattis enim malesuada condimentum.</p>
 
-		<p>Nulla sed dui at dui mattis congue. Donec non pharetra velit. Nam elementum justo leo, id scelerisque orci cursus vitae. Etiam sollicitudin nunc sit amet urna vestibulum laoreet. Pellentesque a luctus mi. Proin ut libero in ligula porta interdum accumsan ut sem. Morbi convallis ligula sit amet metus gravida, in eleifend nisi varius. Etiam lobortis ac ex ut posuere. Vestibulum semper ipsum non urna venenatis tristique. Mauris dignissim lacus accumsan, euismod nibh nec, fringilla tellus. Nam sem metus, volutpat sed ante id, ultricies dictum nulla. Integer vehicula ante ligula, eu efficitur sapien ullamcorper sed. Mauris ante ex, commodo nec finibus at, gravida ac nisl. Donec libero diam, euismod in dolor nec, venenatis tempus magna. Nullam interdum imperdiet magna, et facilisis nibh imperdiet a. Quisque faucibus nisi nisl.</p>
+		<h2 style="text-align:center;">Pupps n Fluffs</h2>
 
-		<p>Ut at sapien finibus justo pharetra tempor. Nulla facilisi. Quisque accumsan dolor quis odio tristique, a interdum augue pharetra. Phasellus posuere interdum varius. Sed ullamcorper at dolor sit amet fermentum. Maecenas condimentum sagittis ligula ac venenatis. Duis non lorem interdum, ultrices dui sit amet, tincidunt lectus.</p>
+		<p style="text-align:center;">Pause to consider there are paws to consider<br/>
 
-		<p>Praesent lobortis molestie est, nec sagittis eros gravida ut. Pellentesque in sapien sed felis bibendum lacinia. Nullam accumsan erat ut nulla euismod vestibulum. Sed et ornare mi. Nullam porttitor at magna et luctus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In ligula est, porttitor ac tellus ut, maximus pellentesque arcu. Proin eget gravida lacus. Quisque imperdiet quam ac ipsum tristique ullamcorper. Integer consectetur ipsum nisi, at faucibus eros congue non.</p>
+		<p>Trying to find animals of all sizes and species a PURRfect home</p>
 
-		<p>Phasellus vel tellus a eros posuere scelerisque at a mauris. Quisque feugiat est at iaculis aliquam. Pellentesque a orci pulvinar, viverra dui nec, tempor diam. In sit amet ante vitae ligula vestibulum rhoncus. Vestibulum odio lorem, aliquam in tellus non, laoreet suscipit dui. Pellentesque tempor orci quis commodo interdum. Ut commodo ipsum et lorem aliquet, vel scelerisque nisl sollicitudin. Fusce aliquam condimentum est vel mollis. Vestibulum mauris sem, facilisis in consequat vitae, ultricies et sem. Nullam efficitur non ante eget fermentum. Integer elementum purus vitae ante faucibus, sit amet vulputate lacus dapibus. Suspendisse vel leo ultricies, aliquam dolor sit amet, porttitor lectus. Vivamus enim neque, semper ut purus sit amet, vehicula rutrum libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-
-		<p>Mauris interdum egestas nulla, venenatis sollicitudin diam vestibulum id. Nunc tincidunt ultricies gravida. Ut id ultricies mi, sit amet blandit urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer ipsum magna, mattis quis dictum et, congue vulputate augue. Nunc malesuada enim vel viverra feugiat. In efficitur diam in posuere lacinia. Pellentesque et scelerisque eros. Donec non dictum erat. Suspendisse vitae vulputate tellus.</p>
-
-		<p>Praesent dictum interdum rhoncus. Mauris accumsan nisi consequat gravida luctus. Praesent laoreet, eros eu venenatis rhoncus, urna dolor dignissim ipsum, nec facilisis urna erat sit amet felis. Nunc et nibh leo. Nullam placerat fringilla porta. Phasellus quis quam ante. Duis in posuere tellus. Donec dictum odio arcu, sed sollicitudin sapien consectetur non. Curabitur elit dolor, semper id faucibus eu, suscipit quis leo. Cras eu magna lorem. Pellentesque a efficitur dui. In sit amet sodales felis. Curabitur vel risus eu augue varius varius in et nunc. In iaculis venenatis mollis.</p>
-
-		<p>Quisque ut interdum leo, quis elementum lorem. Proin vitae nisi eget orci sagittis bibendum non in dui. Aenean quis sem ornare felis ullamcorper euismod. Fusce venenatis neque ut bibendum gravida. Vivamus ac eleifend erat. Morbi lobortis, urna sed facilisis vestibulum, dolor turpis molestie justo, in posuere justo lacus id nulla. Maecenas sagittis sit amet mauris non sagittis. Nullam hendrerit, risus consequat mollis tincidunt, sapien libero gravida lectus, sed sodales dui est non nibh. Sed malesuada dolor aliquet turpis dapibus, at sagittis est facilisis. Praesent eget commodo tortor, eu pretium lacus. Phasellus suscipit ligula ut lacus aliquam sodales sit amet non risus. Proin feugiat porta dui ac feugiat. Nam ac scelerisque nulla, eu semper neque. Donec rutrum commodo fermentum.</p>
-
-		<p>Duis interdum pretium sagittis. Nam sed libero at quam sagittis tempus. Ut ornare consectetur suscipit. Cras at tortor ut augue accumsan malesuada. Nulla vel blandit nibh, nec commodo purus. Donec tincidunt tincidunt risus, in elementum augue pulvinar quis. Mauris at erat nec mi bibendum ornare a vitae odio. Vestibulum nec elit a erat sodales fermentum id sed odio. Curabitur eget tortor dictum urna rhoncus ultrices vel nec orci. Nunc scelerisque neque mauris, et fermentum erat molestie vel.</p>
-
-		<p>Vivamus ultricies elit dolor, in bibendum magna bibendum at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In id lorem egestas augue posuere efficitur. Praesent venenatis odio in nisi faucibus, et eleifend lectus pretium. Vivamus a diam ligula. Etiam sollicitudin tellus tellus, semper pretium velit interdum et. Aliquam purus eros, ultricies quis metus at, dapibus pulvinar ipsum. Aenean vel ligula a risus pretium pellentesque sit amet eu urna. Sed quis congue odio. Mauris consequat enim ultricies urna bibendum pharetra. Nam iaculis, magna accumsan aliquet elementum, turpis justo fringilla odio, nec pharetra erat metus ultricies nibh. In convallis placerat lacus, bibendum hendrerit urna scelerisque quis.</p>
-	</div>
 </div>
+	<div style="align-content: center">
+<div  class="ctd-container" style="visibility:hidden"> <div class="ctd-loading"> <div class="ctd-bounce1"></div> <div class="ctd-bounce2"></div> <div class="ctd-bounce3"></div> </div> <span class="cdt-bar" data-ctd-campaign="CMP790F3BD733F84C2A8084109CBD8C9335"></span> <ul class="cdt-details"> <li> <span class="cdt-number_of_contributors"></span> <span class="cdt-small">backers</span> </li> <li> <span class="cdt-raised_amount" data-format_money="$ :, :0:."></span> <span class="cdt-small">of <span class="cdt-goal_dollars" data-format_money="$ :, :0:."></span></span> </li> <li> <span class="cdt-expiration_date" data-format_date="days_left"></span> <span class="cdt-small">days left</span> </li> </ul> <button class="cdt-btn" data-ct-checkout="openmatt.shopify-embeddable">Contribute now!</button> </div>
+</div>
+		<body>
+
+<script type="text/javascript" src="https://pro.tilt.com/checkout-1-2-2.js"></script>
+<script type="text/javascript" src="https://pro.tilt.com/crowdfunding-0-0-1.js"></script>
+
+</body>
+<div></div>
+</html>
 @stop

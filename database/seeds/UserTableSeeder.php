@@ -14,16 +14,16 @@ class UserTableSeeder extends Seeder
     {
         \DB::table('users')->delete();
         User::create([
-        	'username' => 'sl597',
+        	'email' => 'sl597@mail.com',
         	'password' => bcrypt('sl090195'),
-            'firstName' => 'Sabrina',
-            'lastName' => 'Lam'
+            'name' => 'Sabrina Lam',
+            'telephone' => '000-000-0000',
         	]);
         User::create([
-            'username' => 'bob',
+            'email' => 'bob@mail.com',
             'password' => bcrypt('bob'),
-            'firstName' => 'Bob',
-            'lastName' => 'Bobbinson'
+            'name' => 'Bob Bobbinson',
+            'telephone' => '000-000-0001',
             ]);
     }
 }

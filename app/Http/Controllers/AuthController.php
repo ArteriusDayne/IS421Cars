@@ -12,14 +12,19 @@ class AuthController extends Controller
 	//just return login view
     public function login()
     {
-    	return view('auth.login'); 
+		if(\Auth::check()){
+			return redirect()->route('home');
+		}
+		else{
+			return view('auth.login'); 
+		}
     }
 
     public function handleLogin(Request $request)
     {
         $this->validate($request, User::$login_validation_rules);
 
-    	$data = $request->only('username', 'password');
+    	$data = $request->only('email', 'password');
 
     	//attempt login
     	if(\Auth::attempt($data)){
@@ -27,7 +32,7 @@ class AuthController extends Controller
     	}
 
     	//return to form if login unsucessful
-    	return back()->withInput()->withErrors(['username' => 'Username or password invalid']);
+    	return back()->withInput()->withErrors(['email' => 'Email or password invalid']);
     }
 
     public function logout()
