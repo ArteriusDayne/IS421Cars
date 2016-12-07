@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\Pet;
 use Entrust;
 use Redirect;
+use Image;
+use Illuminate\Support\Facades\Response;
 
 class PetsController extends Controller
 {
@@ -46,26 +48,23 @@ class PetsController extends Controller
     {
         $this->validate($request, Pet::$create_validation_rules);
 
-        //insert pet details w/o photo - (current user ID)
+        //convert uploaded image to base64
+        $img = $request->file('image');
+        $image = (string) Image::make($img)->encode('data-url');
+
+
+        //insert pet details (current user ID)
         $data = $request->only('name', 'dob', 'weight', 'height', 'location', 'description');
 
         $data['userid'] = \Auth::user()->id;
-        $data['image'] = 'test.jpg';
+        $data['image'] = $image;
+
 
         //get new pet id and generate unique image name
         $pet = Pet::create($data);
 
         if($pet)
         {
-            $img = $request->file('image');
-            $destinationPath = 'img/animals/providerUpload';
-            $imgName = 'pet-'. $pet->id . '-'.$img->getClientOriginalName();
-            $img->move($destinationPath, $imgName);
-            
-            //update pet to have its image field point to right place
-            $pet->image = $imgName;
-            $pet->save();  
-
             return back()->with('success', ['Pet added for adoption!']);
         }
 
