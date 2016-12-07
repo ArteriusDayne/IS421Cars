@@ -25,3 +25,5 @@ Route::get('/','PagesController@welcome');
 	Route::get('/about','PagesController@about');
 	Route::get('/feedback','PagesController@feedback');
 	Route::get('/subscribe','PagesController@subscribe');
+	Route::get('/details','PagesController@details');
+0

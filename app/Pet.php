@@ -17,6 +17,6 @@ class Pet extends Model
         'height' => 'required',
         'location' => 'required',
         'description' => 'required',
-        'image' => 'required|image|mimes:jpg,png'
+        'image' => 'required|image|mimes:jpg,png,jpeg'
     ]; 
 }
