@@ -69,4 +69,8 @@
         <script type="text/javascript" src="{{ URL::to('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js') }}"></script>
         <script type="text/javascript" src="{{ URL::to('https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/js/mdb.min.js') }}"></script>
     </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> origin/master

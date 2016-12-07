@@ -26,3 +26,7 @@ Route::get('/','PagesController@welcome');
 	Route::get('/feedback','PagesController@feedback');
 	Route::get('/subscribe','PagesController@subscribe');
 	Route::get('/details','PagesController@details');
+<<<<<<< HEAD
+=======
+0
+>>>>>>> origin/master

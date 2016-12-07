@@ -209,4 +209,8 @@ $(document).ready(function () {
         </head>
         <body class='default'>
             <div id="scheduler"></div>
+<<<<<<< HEAD
         </body>
+=======
+        </body>
+>>>>>>> origin/master
