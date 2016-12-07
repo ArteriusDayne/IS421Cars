@@ -23,7 +23,6 @@
 <table class="table table-bordered">
 
     <thead>
-<<<<<<< HEAD
 
     <tr>
         <th>Pet Name</th>
@@ -53,35 +52,3 @@
 <a><center>Current Pets</center></a>
     </table>
 @endsection
-
-=======
-
-    <tr>
-        <th>Pet Name</th>
-        <th>Pet Date of Birth</th>
-        <th>Pet Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <?php foreach($c as $element)?>
-        <td><?php echo $element->name?></td>
-        <td><?php echo $element->dob?></td>
-        <td><?php echo $element->description?></td>
-    </tr>
-
-
-</tbody>
-
-@endif
-
-<a href="/pets/create">Add new pet for Adoption</a><br>
-
-
-@if( !\Auth::user()->hasRole('adopter') )
-<a href="#">Request to be an Adopter!</a><br>
-@endif
-<a><center>Current Pets</center></a>
-    </table>
-@endsection
->>>>>>> origin/master
