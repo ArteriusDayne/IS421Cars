@@ -15,7 +15,6 @@ class CreatePetsTable extends Migration
         Schema::create('pets', function (Blueprint $table) {
         $table->increments('id');
         $table->integer('userid');
-        //$table->bigInteger('upi');
         $table->string('name', 100);
         $table->tinyInteger('type')->default(0);
         $table->date('dob');
@@ -24,7 +23,7 @@ class CreatePetsTable extends Migration
         $table->string('location', 100);
         $table->tinyInteger('available')->default(0);
         $table->string('description', 1000);
-        $table->string('image');
+        $table->text('image');
         $table->timestamps();
         });
 
