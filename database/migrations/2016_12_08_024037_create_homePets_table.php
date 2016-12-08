@@ -16,6 +16,7 @@ class CreateHomePetsTable extends Migration
             $table->increments('id');
             $table->enum('location', array('carousel', 'featured'));
             $table->integer('pet_id');
+            $table->string('caption')->default('pet');
         });
 
         Schema::table('home_pets', function($table){
