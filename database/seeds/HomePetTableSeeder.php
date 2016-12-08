@@ -29,6 +29,17 @@ class HomePetTableSeeder extends Seeder
  			'location' => 'carousel',
  			'pet_id' => 4
         ]);
-
+        HomePet::create([
+            'location' => 'featured',
+            'pet_id' => 5
+        ]);
+        HomePet::create([
+            'location' => 'featured',
+            'pet_id' => 6
+        ]);
+        HomePet::create([
+            'location' => 'featured',
+            'pet_id' => 7
+        ]);
     }
 }
