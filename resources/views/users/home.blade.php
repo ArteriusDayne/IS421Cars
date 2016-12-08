@@ -17,7 +17,6 @@
         ->Join('users', 'pets.userid', '=', 'users.id')
         ->select('pets.name','pets.dob','pets.description')
         ->get();
-
 ?>
 
 <table class="table table-bordered">
@@ -46,9 +45,6 @@
 <a href="/pets/create">Add new pet for Adoption</a><br>
 
 
-@if( !\Auth::user()->hasRole('adopter') )
-<a href="#">Request to be an Adopter!</a><br>
-@endif
 <a><center>Current Pets</center></a>
     </table>
 @endsection
