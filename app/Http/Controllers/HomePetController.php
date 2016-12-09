@@ -89,9 +89,14 @@ class HomePetController extends Controller
         $pet = HomePet::find($id);
         $pet->caption = $data['caption'];
         $pet->location = $data['location'];
-        $pet->save();
+        $saved = $pet->save();
 
-        return $request->all();
+        if($saved)
+        {
+            return back()->with('success', ['Update Success!']);
+        }
+
+        return back()->withInput(); 
     }
 
     /**
