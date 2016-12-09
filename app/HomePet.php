@@ -20,6 +20,12 @@ class HomePet extends Model
     public static function getCarouselPets()
     {
     	return 
-    	DB::table('home_pets')->join('pets', 'pets.id', '=', 'home_pets.pet_id')->select('pets.name', 'home_pets.caption', 'pets.image')->where('home_pets.location', '=', 'carousel')->get();
+    	DB::table('home_pets')->join('pets', 'pets.id', '=', 'home_pets.pet_id')->select('pets.name', 'home_pets.caption', 'home_pets.location','pets.image')->where('home_pets.location', '=', 'carousel')->get();
+    }
+
+    public static function getFeaturedPets()
+    {
+    	return 
+    	DB::table('home_pets')->join('pets', 'pets.id', '=', 'home_pets.pet_id')->select('pets.name', 'home_pets.caption', 'home_pets.location','pets.image')->where('home_pets.location', '=', 'featured')->get();
     }
 }
