@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Worker Page</title>
+    <title>Material Design Bootstrap</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
@@ -19,10 +19,20 @@
     <link href="css/mdb.min.css" rel="stylesheet">
 
     <!-- Your custom styles (optional) -->
-    <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
 
 </head>
-<!--Navigation-->
+
+<body>
+
+
+    <!-- Start your project here-->
+    <div>
+
+    </div>
+
+    <!-- /Start your project here-->
+	<!--Navigation-->
     <header>
 
         <!--Navbar-->
@@ -51,7 +61,10 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="scheduler.html">Schedule an Appointment</a>
-						</li>
+                        </li>
+						            <li class="nav-item">
+                            <a class="nav-link" href="feedback.html">Feedback</a>
+                        </li>
 						<li class="nav-item btn-group">
 							<a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin User</a>
 							<div class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -60,6 +73,7 @@
 								<a  href="view_feedback.html" class="dropdown-item">View Feedback</a>
 							</div>
 						</li>
+
                     </ul>
 					<ul class="nav navbar-nav nav-flex-icons">
 						<li class ="nav-link nav-item">
@@ -73,20 +87,71 @@
         <!--/.Navbar-->
     </header>
     <!--/Navigation-->
+    <body id="container">
+  	<div class="card centercard">
+  		  <div class="card-block">
+  				<div class="row">
+            <div class="col-md-12"><h1 align= "center">Manage Users Table</h1></div>
 
-<body id= "container">
-	<!--Form-->
-<div class="card-block">
-	
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Abby</td>
+                        <td>Barrett</td>
+                        <td>abc@abc.com</td>
+                        <td>(111) 111-1111</td>
+                        <td>
+                            <a class="teal-text"><i class="fa fa-pencil"></i></a>
+                            <a class="red-text"><i class="fa fa-times"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Danny</td>
+                        <td>Collins</td>
+                        <td>abc@abc.com</td>
+                        <td>(111) 111-1111</td>
+                        <td>
+                            <a class="teal-text"><i class="fa fa-pencil"></i></a>
+                            <a class="red-text"><i class="fa fa-times"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Clara</td>
+                        <td>Ericson</td>
+                        <td>abc@abc.com</td>
+                        <td>(111) 111-1111</td>
+                        <td>
+                            <a class="teal-text"><i class="fa fa-pencil"></i></a>
+                            <a class="red-text"><i class="fa fa-times"></i></a>
+                        </td>
+                    </tr>
 
-    <!--Header-->
-	<h1 align="center" >Feedback</h1> <br />
-	<h5>James wheeler</h5> <br />
-	<p> this dealership provides very reasonable price for used cars also they have very good service plans.</p>
-    <div class="text-xs-center">
+                </tbody>
+            </table>
+
+          </div>
+        </div>
     </div>
-</div>
-<!--Form-->
+  </body>
+
+<!--Footer-->
+
+<!--/.Footer-->
+
+
 
 
     <!-- SCRIPTS -->
@@ -105,4 +170,5 @@
 
 
 </body>
+
 </html>
