@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Entrust;
 use Redirect;
+use App\HomePet;
 
 class HomePetController extends Controller
 {
@@ -24,7 +25,11 @@ class HomePetController extends Controller
     {
         if(!$this->checkAdmin()) return Redirect::to('/');
 
-        return 'yes';
+        $homePets = array();
+        $homePets['carousel'] = HomePet::getCarouselPets();
+        $homePets['featured'] = HomePet::getFeaturedPets();
+
+        return view('homePets.index')->with('homePets', $homePets);
     }
 
     /**
