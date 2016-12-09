@@ -18,7 +18,7 @@
         	<td class="col-md-4"><img src={{$pet->image}} height=95px; width=235px;></td>
             <td class="col-md-2">{{ $pet->name }}</td>
             <td class="col-md-2">{{ $pet->caption }}</td>
-            <td class="col-md-2"><a href="#">Edit</a></td>
+            <td class="col-md-2"><a href="{{ action('HomePetController@edit', ['id' => $pet->id]) }}">Edit</a></td>
             <td class="col-md-2"><a href="#">Delete</a></td>
         </tr>
         @endforeach
@@ -43,7 +43,7 @@
         	<td class="col-md-4"><img src={{$pet->image}} height=95px; width=235px;></td>
             <td class="col-md-2">{{ $pet->name }}</td>
             <td class="col-md-2">{{ $pet->caption }}</td>
-            <td class="col-md-2"><a href="#">Edit</a></td>
+            <td class="col-md-2"><a href="{{ action('HomePetController@edit', ['id' => $pet->id]) }}">Edit</a></td>
             <td class="col-md-2"><a href="#">Delete</a></td>
         </tr>
         @endforeach
