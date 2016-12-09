@@ -19,7 +19,11 @@
             <td class="col-md-2">{{ $pet->name }}</td>
             <td class="col-md-2">{{ $pet->caption }}</td>
             <td class="col-md-2"><a href="{{ action('HomePetController@edit', ['id' => $pet->id]) }}">Edit</a></td>
-            <td class="col-md-2"><a href="#">Delete</a></td>
+            <td class="col-md-2">
+            	{!! Form::open(['action' => ['HomePetController@destroy', $pet->id], 'method' => 'delete']) !!}
+				{!! Form::submit('Delete') !!}
+				{!! Form::close() !!}
+            </td>
         </tr>
         @endforeach
     </tbody>
@@ -44,7 +48,11 @@
             <td class="col-md-2">{{ $pet->name }}</td>
             <td class="col-md-2">{{ $pet->caption }}</td>
             <td class="col-md-2"><a href="{{ action('HomePetController@edit', ['id' => $pet->id]) }}">Edit</a></td>
-            <td class="col-md-2"><a href="#">Delete</a></td>
+            <td class="col-md-2">            	
+            {!! Form::open(['action' => ['HomePetController@destroy', $pet->id], 'method' => 'delete']) !!}
+			{!! Form::submit('Delete') !!}
+			{!! Form::close() !!}
+			</td>
         </tr>
         @endforeach
     </tbody>
