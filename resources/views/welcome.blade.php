@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('home_slider')
-<?php $homePets = App\HomePet::getCarouselPets(); //print_r($homePets); ?>
+<?php $homePets = App\HomePet::getCarouselPets();  ?>
 
 <!--Carousel Wrapper-->
 <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel" style="margin-top:40px;">
@@ -64,30 +64,22 @@
 <h1 style="text-align:center">Fluffies!</h1>
 <div class="card-deck-wrapper">
     <div class="card-deck">
-        <div class="card">
-            <img class="card-img-top img" src="img/puppers/sized/pomsky.jpg" alt="No Cars Photos">
-            <div class="card-block">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <a class="btn btn-primary dbutton" href="deatils.html" role="button">Details</a>
-            </div>
+
+<?php $homePets = App\HomePet::getFeaturedPets(); ?>
+        @foreach($homePets as $pet)
+        <div class ="col-md-4" style="padding:0;">
+            <div class="card">
+                <img class="card-img-top img" src={{$pet->image}} alt="Pet">
+                <div class="card-block">
+                    <h4 class="card-title">Card title</h4>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <a class="btn btn-primary dbutton" href="deatils.html" role="button">Details</a>
+                </div>
+            </div><br>
         </div>
-        <div class="card">
-            <img class="card-img-top img" src="img/puppers/sized/hamster-1.jpg" alt="No Cars Photos">
-            <div class="card-block">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <a class="btn btn-primary dbutton" href="deatils.html" role="button">Details</a>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top img" src="img/puppers/sized/doggo2.jpg" alt="No Cars Photos">
-            <div class="card-block">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <a class="btn btn-primary" href="deatils.html" role="button">Details</a>
-            </div>
-        </div>
+        @endforeach
+
+
     </div>
 </div>
 
