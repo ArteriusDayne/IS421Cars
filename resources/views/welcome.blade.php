@@ -1,108 +1,49 @@
 @extends('layouts.master')
 @section('home_slider')
+<?php $homePets = App\HomePet::getCarouselPets(); //print_r($homePets); ?>
+
 <!--Carousel Wrapper-->
 <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel" style="margin-top:40px;">
+
     <!--Indicators-->
-    <ol class="carousel-indicators">
-        <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-2" data-slide-to="1"></li>
-        <li data-target="#carousel-example-2" data-slide-to="2"></li>
-        <li data-target="#carousel-example-2" data-slide-to="3"></li>
-        <li data-target="#carousel-example-2" data-slide-to="4"></li>
+    <ol class="carousel-indicators">       
+        @foreach($homePets as $index => $pet)
+            @if($index == 0)
+                <li data-target="#carousel-example-2" data-slide-to={{$index}} class="active"></li>
+            @else
+                <li data-target="#carousel-example-2" data-slide-to={{$index}}></li>
+            @endif
+        @endforeach
     </ol>
     <!--/.Indicators-->
 
     <!--Slides-->
     <div class="carousel-inner" role="listbox">
-        <!--First slide-->
-        <div class="carousel-item active">
-            <!--Mask color-->
-            <div class="view hm-black-slight">
-                <img src="img/puppers/sized/corgi.jpg" class="img-fluid" alt="Corgis">
-                <div class="full-bg-img">
-                </div>
-            </div>
-            <!--Caption-->
-            <div class="carousel-caption">
-                <div class="animated fadeInDown">
-                    <h3 class="h3-responsive">Corgi Puppies</h3>
-                </div>
-            </div>
-            <!--Caption-->
-        </div>
-        <!--/First slide-->
 
-        <!--Second slide-->
-        <div class="carousel-item">
-            <!--Mask color-->
-            <div class="view hm-black-slight">
-                <img src="img/puppers/sized/cutepupper.jpg" class="img-fluid" alt="Cute Puppy">
-                <div class="full-bg-img">
-                </div>
-            </div>
-            <!--Caption-->
-            <div class="carousel-caption">
-                <div class="animated fadeInDown">
-                    <h3 class="h3-responsive">The cutest puppies you'll ever see!</h3>
-                </div>
-            </div>
-            <!--Caption-->
-        </div>
-        <!--/Second slide-->
+    @foreach($homePets as $index => $pet)
 
-        <!--Third slide-->
-        <div class="carousel-item">
-            <!--Mask color-->
-            <div class="view hm-black-slight">
-                <img src="img/puppers/sized/pomsky.jpg" class="img-fluid" alt="pomsky">
-                <div class="full-bg-img">
+        @if($index == 0)
+            <div class="carousel-item active">
+        @else
+            <div class="carousel-item">
+        @endif
+                <!--Mask color-->
+                <div class="view hm-black-slight">
+                    <img src={{$pet->image}} class="img-fluid" alt="Corgis">
+                    <div class="full-bg-img">
+                    </div>
                 </div>
-            </div>
-            <!--Caption-->
-            <div class="carousel-caption">
-                <div class="animated fadeInDown">
-                    <h3 class="h3-responsive">Pomsky Puppy</h3>
+                <!--Caption-->
+                <div class="carousel-caption">
+                    <div class="animated fadeInDown">
+                        <h3 class="h3-responsive">{{$pet->caption}}</h3>
+                    </div>
                 </div>
+                <!--Caption-->
             </div>
-            <!--Caption-->
-        </div>
-        <!--/Third slide-->
 
-        <!--Forth slide-->
-        <div class="carousel-item">
-            <!--Mask color-->
-            <div class="view hm-black-slight">
-                <img src="img/puppers/sized/puppers.jpg" class="img-fluid" alt="Puppers">
-                <div class="full-bg-img">
-                </div>
-            </div>
-            <!--Caption-->
-            <div class="carousel-caption">
-                <div class="animated fadeInDown">
-                    <h3 class="h3-responsive">The Cutest Puppies!</h3>
-                </div>
-            </div>
-            <!--Caption-->
-        </div>
-        <!--/Forth slide-->
+    @endforeach
 
-        <!--Fifth slide-->
-        <div class="carousel-item">
-            <!--Mask color-->
-            <div class="view hm-black-slight">
-                <img src="img/puppers/sized/doggo.jpg" class="img-fluid" alt="Doggo">
-                <div class="full-bg-img">
-                </div>
-            </div>
-            <!--Caption-->
-            <div class="carousel-caption">
-                <div class="animated fadeInDown">
-                    <h3 class="h3-responsive">Doggo</h3>
-                </div>
-            </div>
-            <!--Caption-->
-        </div>
-        <!--/Fifth slide-->
     </div>
     <!--/.Slides-->
 
