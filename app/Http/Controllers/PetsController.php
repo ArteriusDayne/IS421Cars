@@ -59,11 +59,20 @@ class PetsController extends Controller
         $data['userid'] = \Auth::user()->id;
         $data['image'] = $image;
 
+        //get new pet and
+        $pet = new Pet;
+        $pet->id = Pet::all()->last()->id + 1;
+        $pet->userid = $data['userid'];
+        $pet->name = $data['name'];
+        $pet->dob = $data['dob'];
+        $pet->weight = $data['weight'];
+        $pet->height = $data['height'];
+        $pet->location = $data['location'];
+        $pet->description = $data['description'];
+        $pet->image = $data['image'];
+        $saved = $pet->save();
 
-        //get new pet id and generate unique image name
-        $pet = Pet::create($data);
-
-        if($pet)
+        if($saved)
         {
             return back()->with('success', ['Pet added for adoption!']);
         }
