@@ -80,7 +80,14 @@ class PetsController extends Controller
      */
     public function show($id)
     {
+        $pet = Pet::getPetDetails($id);
 
+        if($pet)
+        {
+            return view('pets.show')->with('pet', $pet);
+        }
+
+        return Redirect('/');
     }
 
     /**
