@@ -72,7 +72,7 @@ class HomePetController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('homePets.edit')->with('pet', HomePet::find($id));
     }
 
     /**
@@ -84,7 +84,14 @@ class HomePetController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->only('caption', 'location');
+        
+        $pet = HomePet::find($id);
+        $pet->caption = $data['caption'];
+        $pet->location = $data['location'];
+        $pet->save();
+
+        return $request->all();
     }
 
     /**
