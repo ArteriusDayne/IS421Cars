@@ -18,6 +18,7 @@ Route::get('/','PagesController@welcome');
 	Route::resource('users', 'UsersController', ['only' => ['create', 'store']]);
 	Route::get('/new-sales', ['as' => 'sales', 'uses' => 'SalesController@create']);
 	Route::resource('sales', 'SalesController', ['only' => ['create', 'store']]);
+	Route::resource('homepets', 'HomePetController');
 	Route::resource('pets', 'PetsController');
 	Route::get('/inventory','PagesController@inventory');
 	Route::get('/schedule','PagesController@schedule');

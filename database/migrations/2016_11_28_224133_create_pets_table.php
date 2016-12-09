@@ -15,16 +15,15 @@ class CreatePetsTable extends Migration
         Schema::create('pets', function (Blueprint $table) {
         $table->increments('id');
         $table->integer('userid');
-        //$table->bigInteger('upi');
         $table->string('name', 100);
         $table->tinyInteger('type')->default(0);
         $table->date('dob');
         $table->decimal('weight',5,2);
         $table->decimal('height',5,2);
         $table->string('location', 100);
-        $table->tinyInteger('available')->default(0);
+        $table->tinyInteger('available')->default(1);
         $table->string('description', 1000);
-        $table->string('image');
+        $table->text('image');
         $table->timestamps();
         });
 

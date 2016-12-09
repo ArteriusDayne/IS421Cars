@@ -151,6 +151,7 @@ return [
         MaddHatter\LaravelFullcalendar\ServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         Ipunkt\LaravelAnalytics\AnalyticsServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
 
         /*
@@ -210,6 +211,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'Analytics' => Ipunkt\LaravelAnalytics\AnalyticsFacade::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 

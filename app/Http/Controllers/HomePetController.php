@@ -5,14 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Pet;
 use Entrust;
 use Redirect;
-use Image;
-use Illuminate\Support\Facades\Response;
+use App\HomePet;
 
-class PetsController extends Controller
+class HomePetController extends Controller
 {
+    private function checkAdmin()
+    {
+        return Entrust::hasRole('admin');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -20,7 +23,13 @@ class PetsController extends Controller
      */
     public function index()
     {
-        return view('pets.index')->with('pets', Pet::all());
+        if(!$this->checkAdmin()) return Redirect::to('/');
+
+        $homePets = array();
+        $homePets['carousel'] = HomePet::getCarouselPets();
+        $homePets['featured'] = HomePet::getFeaturedPets();
+
+        return view('homePets.index')->with('homePets', $homePets);
     }
 
     /**
@@ -30,12 +39,7 @@ class PetsController extends Controller
      */
     public function create()
     {
-        if(Entrust::hasRole('provider'))
-        {
-            return view('pets.create');
-        }
-
-        return Redirect::to('/');
+        //
     }
 
     /**
@@ -46,30 +50,7 @@ class PetsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, Pet::$create_validation_rules);
-
-        //convert uploaded image to base64
-        $img = $request->file('image');
-        $image = (string) Image::make($img)->encode('data-url');
-
-
-        //insert pet details (current user ID)
-        $data = $request->only('name', 'dob', 'weight', 'height', 'location', 'description');
-
-        $data['userid'] = \Auth::user()->id;
-        $data['image'] = $image;
-
-
-        //get new pet id and generate unique image name
-        $pet = Pet::create($data);
-
-        if($pet)
-        {
-            return back()->with('success', ['Pet added for adoption!']);
-        }
-
-        return back()->withInput(); 
-
+        //
     }
 
     /**
@@ -80,7 +61,7 @@ class PetsController extends Controller
      */
     public function show($id)
     {
-
+        //
     }
 
     /**
@@ -91,7 +72,7 @@ class PetsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('homePets.edit')->with('pet', HomePet::find($id));
     }
 
     /**
@@ -103,7 +84,19 @@ class PetsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->only('caption', 'location');
+        
+        $pet = HomePet::find($id);
+        $pet->caption = $data['caption'];
+        $pet->location = $data['location'];
+        $saved = $pet->save();
+
+        if($saved)
+        {
+            return back()->with('success', ['Update Success!']);
+        }
+
+        return back()->withInput(); 
     }
 
     /**
@@ -114,8 +107,9 @@ class PetsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pet = HomePet::find($id);
+        $pet->delete();
+
+        return back();
     }
-
-
 }
