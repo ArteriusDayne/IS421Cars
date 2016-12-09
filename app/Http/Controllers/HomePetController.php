@@ -102,6 +102,9 @@ class HomePetController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pet = HomePet::find($id);
+        $pet->delete();
+
+        return back();
     }
 }
