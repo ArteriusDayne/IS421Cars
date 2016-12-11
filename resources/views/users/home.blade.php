@@ -52,4 +52,3 @@
 <a><center>Current Pets</center></a>
     </table>
 @endsection
-

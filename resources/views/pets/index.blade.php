@@ -16,7 +16,7 @@
 								{{ $pet['description'] }}
 								<br>
 								Location: {{ $pet['location'] }}</p>
-								<a href="#">View more details</a>
+								<a href="{{ action('PetsController@show', ['id' => $pet['id']]) }}">View more details</a>
 							</div>
 						</div>
 						<br>

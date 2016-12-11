@@ -9,21 +9,31 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
+/* Home page */
 Route::get('/','PagesController@welcome');
-	Route::get('/login', ['as' => 'login', 'uses' => 'AuthController@login']);
-	Route::post('/handleLogin', ['as' => 'handleLogin', 'uses' => 'AuthController@handleLogin']);
-	Route::get('/home', ['middleware' => 'auth', 'as' => 'home', 'uses' => 'UsersController@home']);
-	Route::get('/logout', ['as' => 'logout', 'uses' => 'AuthController@logout']);
-	Route::get('/create', ['as' => 'create', 'uses' => 'UsersController@create']);
-	Route::resource('users', 'UsersController', ['only' => ['create', 'store']]);
-	Route::get('/new-sales', ['as' => 'sales', 'uses' => 'SalesController@create']);
-	Route::resource('sales', 'SalesController', ['only' => ['create', 'store']]);
-	Route::resource('homepets', 'HomePetController');
-	Route::resource('pets', 'PetsController');
-	Route::get('/inventory','PagesController@inventory');
-	Route::get('/schedule','PagesController@schedule');
-	Route::get('/contact','PagesController@contact');
-	Route::get('/about','PagesController@about');
-	Route::get('/feedback','PagesController@feedback');
-	Route::get('/subscribe','PagesController@subscribe');
-	Route::get('/details','PagesController@details');
+
+/* Auth routes (logging in and out) */
+Route::get('/login', ['as' => 'login', 'uses' => 'AuthController@login']);
+Route::post('/handleLogin', ['as' => 'handleLogin', 'uses' => 'AuthController@handleLogin']);
+Route::get('/logout', ['as' => 'logout', 'uses' => 'AuthController@logout']);
+
+Route::get('/home', ['middleware' => 'auth', 'as' => 'home', 'uses' => 'UsersController@home']);
+
+/* User Routes */
+Route::get('/create', ['as' => 'create', 'uses' => 'UsersController@create']);
+Route::resource('users', 'UsersController', ['only' => ['create', 'store']]);
+
+/* Pet Routes */
+Route::resource('pets', 'PetsController');
+
+/* HomePet Routes */
+Route::resource('homepets', 'HomePetController');
+
+/* Static Page Routes */
+Route::get('/inventory','PagesController@inventory');
+Route::get('/schedule','PagesController@schedule');
+Route::get('/contact','PagesController@contact');
+Route::get('/about','PagesController@about');
+Route::get('/feedback','PagesController@feedback');
+Route::get('/subscribe','PagesController@subscribe');

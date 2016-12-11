@@ -50,7 +50,24 @@ class HomePetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only('id');
+
+        $pet = HomePet::where('pet_id', '=', $data['id'])->first();
+
+        if($pet)
+        {
+            return back()->withErrors(['Already HomePet']);
+        }
+        else
+        {
+            $homePet = new HomePet;
+            $homePet->location = 'carousel';
+            $homePet->pet_id = $data['id'];
+            $homePet->save();
+
+            return redirect()->action('HomePetController@edit', ['id' => $homePet->id])->with('success', ['HomePet added. Time to Edit!']);
+        }
+
     }
 
     /**
