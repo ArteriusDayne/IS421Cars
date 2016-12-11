@@ -5,12 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Car;
 use Entrust;
 use Redirect;
+use App\HomePet;
 
-class CarsController extends Controller
+class HomePetController extends Controller
 {
+    private function checkAdmin()
+    {
+        return Entrust::hasRole('admin');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +23,13 @@ class CarsController extends Controller
      */
     public function index()
     {
-        return view('inventory')->with('cars', Car::all());
+        if(!$this->checkAdmin()) return Redirect::to('/');
+
+        $homePets = array();
+        $homePets['carousel'] = HomePet::getCarouselPets();
+        $homePets['featured'] = HomePet::getFeaturedPets();
+
+        return view('homePets.index')->with('homePets', $homePets);
     }
 
     /**
@@ -28,13 +39,7 @@ class CarsController extends Controller
      */
     public function create()
     {
-
-        if(Entrust::hasRole('salesPerson'))
-        {
-            return view('cars.create');
-        }
-
-        return Redirect::to('/');
+        //
     }
 
     /**
@@ -45,17 +50,24 @@ class CarsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, Car::$create_validation_rules);
+        $data = $request->only('id');
 
-        $data = $request->only('vin', 'year', 'make', 'model', 'price');
+        $pet = HomePet::where('pet_id', '=', $data['id'])->first();
 
-        $car = Car::create($data);
-
-        if($car)
+        if($pet)
         {
-            return back()->with('success', ['Car added to Inventory']);
+            return back()->withErrors(['Already HomePet']);
         }
-        return back()->withInput(); 
+        else
+        {
+            $homePet = new HomePet;
+            $homePet->location = 'carousel';
+            $homePet->pet_id = $data['id'];
+            $homePet->save();
+
+            return redirect()->action('HomePetController@edit', ['id' => $homePet->id])->with('success', ['HomePet added. Time to Edit!']);
+        }
+
     }
 
     /**
@@ -66,8 +78,7 @@ class CarsController extends Controller
      */
     public function show($id)
     {
-        //TODO return the view(Car Profile) along with the specified car
-        return Car::findOrFail($id);
+        //
     }
 
     /**
@@ -78,14 +89,7 @@ class CarsController extends Controller
      */
     public function edit($id)
     {
-        if(Entrust::hasRole('salesPerson'))
-        {
-            $car = Car::findOrFail($id);
-
-            return view('cars.edit')->with('car', $car);
-        }
-
-        return Redirect::to('/');
+        return view('homePets.edit')->with('pet', HomePet::find($id));
     }
 
     /**
@@ -97,19 +101,19 @@ class CarsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //TODO finish updating car
-        $this->validate($request, Car::$update_validation_rules);
+        $data = $request->only('caption', 'location');
+        
+        $pet = HomePet::find($id);
+        $pet->caption = $data['caption'];
+        $pet->location = $data['location'];
+        $saved = $pet->save();
 
-        $data = $request->only('vin', 'year', 'make', 'model', 'price');
-        unset($data['vin']);
-
-        if(Car::find($id)->update($data))
+        if($saved)
         {
-            return back()->with('success', ['Car updated']);
+            return back()->with('success', ['Update Success!']);
         }
 
-        return back()->withInput();
-
+        return back()->withInput(); 
     }
 
     /**
@@ -120,6 +124,9 @@ class CarsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pet = HomePet::find($id);
+        $pet->delete();
+
+        return back();
     }
 }

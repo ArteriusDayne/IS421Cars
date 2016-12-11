@@ -7,9 +7,8 @@
 			@foreach($pets as $pet)
 				<div class ="col-md-3" style="padding:0;">
 						<div class="card">
-							
-							<img class="card-img-top img" src="{{ asset('img/animals/providerUpload/').'/'. $pet['image'] }}" alt="No Cars Photos">
 
+							<img class="card-img-top img" src="{{ $pet['image'] }}" alt="Pet Image">
 
 							<div class="card-block">
 								<h4 class="card-title">{{ $pet['name'] }}</h4>
@@ -17,7 +16,7 @@
 								{{ $pet['description'] }}
 								<br>
 								Location: {{ $pet['location'] }}</p>
-								<a href="#">View more details</a>
+								<a href="{{ action('PetsController@show', ['id' => $pet['id']]) }}">View more details</a>
 							</div>
 						</div>
 						<br>

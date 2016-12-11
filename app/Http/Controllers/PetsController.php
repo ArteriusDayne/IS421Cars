@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\Pet;
 use Entrust;
 use Redirect;
+use Image;
+use Illuminate\Support\Facades\Response;
 
 class PetsController extends Controller
 {
@@ -46,26 +48,32 @@ class PetsController extends Controller
     {
         $this->validate($request, Pet::$create_validation_rules);
 
-        //insert pet details w/o photo - (current user ID)
+        //convert uploaded image to base64
+        $img = $request->file('image');
+        $image = (string) Image::make($img)->encode('data-url');
+
+
+        //insert pet details (current user ID)
         $data = $request->only('name', 'dob', 'weight', 'height', 'location', 'description');
 
         $data['userid'] = \Auth::user()->id;
-        $data['image'] = 'test.jpg';
+        $data['image'] = $image;
 
-        //get new pet id and generate unique image name
-        $pet = Pet::create($data);
+        //get new pet and
+        $pet = new Pet;
+        $pet->id = Pet::all()->last()->id + 1;
+        $pet->userid = $data['userid'];
+        $pet->name = $data['name'];
+        $pet->dob = $data['dob'];
+        $pet->weight = $data['weight'];
+        $pet->height = $data['height'];
+        $pet->location = $data['location'];
+        $pet->description = $data['description'];
+        $pet->image = $data['image'];
+        $saved = $pet->save();
 
-        if($pet)
+        if($saved)
         {
-            $img = $request->file('image');
-            $destinationPath = 'img/animals/providerUpload';
-            $imgName = 'pet-'. $pet->id . '-'.$img->getClientOriginalName();
-            $img->move($destinationPath, $imgName);
-            
-            //update pet to have its image field point to right place
-            $pet->image = $imgName;
-            $pet->save();  
-
             return back()->with('success', ['Pet added for adoption!']);
         }
 
@@ -81,7 +89,14 @@ class PetsController extends Controller
      */
     public function show($id)
     {
+        $pet = Pet::getPetDetails($id);
 
+        if($pet)
+        {
+            return view('pets.show')->with('pet', $pet);
+        }
+
+        return Redirect('/');
     }
 
     /**

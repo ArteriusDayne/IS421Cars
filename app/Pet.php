@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class Pet extends Model
 {
@@ -19,4 +20,10 @@ class Pet extends Model
         'description' => 'required',
         'image' => 'required|image|mimes:jpg,png,jpeg'
     ]; 
+
+    public static function getPetDetails($id)
+    {
+        return 
+        DB::table('pets')->join('users', 'pets.userid','=','users.id')->select('pets.*', 'users.name as ownerName')->where('pets.id', '=', $id)->first();
+    }
 }
