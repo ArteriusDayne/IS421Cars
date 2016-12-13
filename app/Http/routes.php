@@ -42,7 +42,7 @@ Route::get('/inventory','PagesController@inventory');
 //Route::get('/schedule','PagesController@schedule');
 Route::get('/contact','PagesController@contact');
 
-Route::get('/schedule','PagesController@schedule');
+//Route::get('/schedule','PagesController@schedule');
 
 Route::get('/about','PagesController@about');
 Route::get('/managePets', 'PagesController@managePets');
