@@ -1,3 +1,4 @@
+@extends('layouts.master')
 @extends('layouts.calendarEventLayout')
 
 @section('content')
@@ -17,11 +18,11 @@
                      <input type="text" name="title" class="form-control" value=""/>
                 </div>
                     <div class="form-group">
-                     <label for="start">START</label>
+                     <label for="start">START  (Date and time must be formatted Year-Month-Day Hours:Minutes:Seconds)</label>
                      <input type="text" name="start" class="form-control" value=""/>
                 </div>
                     <div class="form-group">
-                     <label for="end">END</label>
+                     <label for="end">END   (Date and time must be formatted Year-Month-Day Hours:Minutes:Seconds)</label>
                      <input type="text" name="end" class="form-control" value=""/>
                 </div>
                     <div class="form-group">

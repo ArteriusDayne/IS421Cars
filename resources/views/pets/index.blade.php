@@ -1,6 +1,5 @@
 @extends('layouts.master')
 @section('page_content')
-
 <div class="card-deck-wrapper">
     <div class="card-deck">
 		<div class="row">

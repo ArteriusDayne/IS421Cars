@@ -1,4 +1,8 @@
+<?php =DB::table('events')->get();?>
+
+
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,13 +20,14 @@
     <link href="{{ URL::to('https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/css/mdb.min.css') }}" rel="stylesheet">
     <link href="{{ URL::to('https://dl.dropboxusercontent.com/s/jfd5alqs3yw2p54/main.css') }}" rel="stylesheet">
     <link href="http://www.w3schools.com/lib/w3.css" rel="stylesheet">
-    <link rel="shortcut icon" href="{{{ asset('img/favicon.ico') }}}">
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}}">
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     {!! Analytics::render() !!}
+
 </head>
 <body>
     <header>
@@ -32,9 +37,11 @@
                 <div class="collapse navbar-toggleable-xs" id="collapseEx">
                     <a class="navbar-brand" href="/" target="_blank">Puppies & Fluffies</a>
                     <ul class="nav navbar-nav">
-
-                        <li class="nav-item {{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="/"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a></li>
-                        
+                        @if(\Auth::check())
+                            <li class="nav-item {{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="/home"><i class="fa fa-home" aria-hidden="true"></i> Account <span class="sr-only">(current)</span></a></li>
+                        @else
+                            <li class="nav-item {{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="/"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a></li>
+                        @endif
                         <li class="nav-item {{Request::is('pets') ? 'active' : ''}}"><a class="nav-link" href="/pets"><i class="fa fa-paw" aria-hidden="true"></i> Adoptions </a></li>
                         <li class="nav-item {{Request::is('schedule') ? 'active' : ''}}"><a class="nav-link" href="/schedule"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Appointments</a></li>
                         <li class="nav-item {{Request::is('about') ? 'active' : ''}}"><a class="nav-link" href="/about"><i class="fa fa-info" aria-hidden="true"></i> About</a></li>
@@ -43,14 +50,12 @@
                     </ul>
                     <ul class="nav navbar-nav nav-flex-icons">
                         @if(\Auth::check())
-						<li class="nav-item {{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="/home"><i class="fa fa-user" aria-hidden="true"></i> My Account  <span class="sr-only">(current)</span></a>
-						</li>	
-                        <li class="nav-link nav-item">
-                            {{ link_to_route('logout', 'Sign out') }} <i class="fa fa-sign-out" aria-hidden="true"></i>
-                        </li>
+                            <li class="nav-link nav-item">
+                                {{ link_to_route('logout', 'Sign out') }} <i class="fa fa-sign-out" aria-hidden="true"></i>
+                            </li>
                         @else
-                        <li class ="nav-link nav-item">{{ link_to_route('login', 'Sign in') }} <i class="fa fa-sign-in" aria-hidden="true"></i>  </li>
-                        <li class ="nav-link nav-item" >{{ link_to_route('create', 'Sign up') }}<i class="fa fa-user-plus" aria-hidden="true"></i></li>
+                            <li class ="nav-link nav-item">{{ link_to_route('login', 'Sign in') }} <i class="fa fa-sign-in" aria-hidden="true"></i>  </li>
+                            <li class ="nav-link nav-item" >{{ link_to_route('create', 'Sign up') }}<i class="fa fa-user-plus" aria-hidden="true"></i></li>
                         @endif
                     </ul>
                 </div>
@@ -93,19 +98,18 @@
             <script type="text/javascript" src="js/jqwidgets/globalization/globalize.culture.de-DE.js"></script>
             <script type="text/javascript">
 $(document).ready(function () {
+    <?php foreach ($e as $element)?>
     var appointments = new Array();
+
     var appointment1 = {
-        id: "id1",
-        description: "George brings projector for presentations.",
-        location: "",
-        subject: "Quarterly Project Review Meeting",
-        calendar: "Newark, NJ",
-        start: new Date(2016, 10, 23, 9, 0, 0),
-        end: new Date(2016, 10, 23, 16, 0, 0)
+        id:"$"
+
+
     }
     var appointment2 = {
         id: "id2",
-        description: "",
+        name:"Event2",
+        description: "max",
         location: "",
         subject: "IT Group Mtg.",
         calendar: "New Brunswick, NJ",
@@ -114,6 +118,7 @@ $(document).ready(function () {
     }
     var appointment3 = {
         id: "id3",
+        name:"Event3",
         description: "",
         location: "",
         subject: "Course Social Media",
@@ -123,6 +128,7 @@ $(document).ready(function () {
     }
     var appointment4 = {
         id: "id4",
+        name:"Event4",
         description: "",
         location: "",
         subject: "New Projects Planning",
@@ -132,6 +138,7 @@ $(document).ready(function () {
     }
     var appointment5 = {
         id: "id5",
+
         description: "",
         location: "",
         subject: "Interview with James",
@@ -155,6 +162,7 @@ $(document).ready(function () {
     appointments.push(appointment5);
     appointments.push(appointment6);
     // prepare the data
+
     var source =
             {
                 dataType: "array",
