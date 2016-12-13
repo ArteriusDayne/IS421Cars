@@ -4,9 +4,6 @@
 @section('page_content')
 <head style="text-align:center">Welcome, {{ $name }}</head>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 @role('admin')
     <br>
     @include('admin.users')
