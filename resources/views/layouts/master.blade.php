@@ -36,11 +36,11 @@
                         <ul class="nav navbar-nav">
                             <li class="nav-item {{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="/"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a></li>
                             <li class="nav-item {{Request::is('pets') ? 'active' : ''}}"><a class="nav-link" href="/pets"><i class="fa fa-paw" aria-hidden="true"></i> Adoptions </a></li>
-<<<<<<< HEAD
-                            <li class="nav-item {{Request::is('schedule') ? 'active' : ''}}"><a class="nav-link" href="/schedule"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Events</a></li>
-=======
+
+                          
+
                             <li class="nav-item {{Request::is('calendar_events') ? 'active' : ''}}"><a class="nav-link" href="/calendar_events"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Appointments</a></li>
->>>>>>> 35f431749bc41b135f9d0d77bf0abda0a41f327f
+
                             <li class="nav-item {{Request::is('about') ? 'active' : ''}}"><a class="nav-link" href="/about"><i class="fa fa-info" aria-hidden="true"></i> About</a></li>
                             <li class="nav-item {{Request::is('feedback') ? 'active' : ''}}"><a class="nav-link" href="/feedback"><i class="fa fa-comments-o" aria-hidden="true"></i> Feedback </a></li>
                             @role('admin')
