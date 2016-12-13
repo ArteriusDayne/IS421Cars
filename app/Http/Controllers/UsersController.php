@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
-use App\Car;
+use App\Pets;
 use App\Sale;
 
 class UsersController extends Controller
@@ -109,4 +109,5 @@ class UsersController extends Controller
     {
         return view('users.home', ['name' => \Auth::user()->name]);
     }
+
 }

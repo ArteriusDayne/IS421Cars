@@ -27,12 +27,18 @@ Route::resource('users', 'UsersController', ['only' => ['create', 'store']]);
 /* Pet Routes */
 Route::resource('pets', 'PetsController');
 
+/* Events Routes */
+Route::resource('events','EventsController');
+
+/**Remove if this doesnt work*/
+Route::resource('calendar_events', 'CalendarEventController');
+
 /* HomePet Routes */
 Route::resource('homepets', 'HomePetController');
 
 /* Static Page Routes */
 Route::get('/inventory','PagesController@inventory');
-Route::get('/schedule','PagesController@schedule');
+//Route::get('/schedule','PagesController@schedule');
 Route::get('/contact','PagesController@contact');
 Route::get('/about','PagesController@about');
 Route::get('/feedback','PagesController@feedback');
