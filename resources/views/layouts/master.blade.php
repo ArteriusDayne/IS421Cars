@@ -40,6 +40,17 @@
                             <li class="nav-item {{Request::is('about') ? 'active' : ''}}"><a class="nav-link" href="/about"><i class="fa fa-info" aria-hidden="true"></i> About</a></li>
                             <li class="nav-item {{Request::is('contact') ? 'active' : ''}}"><a class="nav-link" href="/contact"><i class="fa fa-volume-control-phone" aria-hidden="true"></i> Contact</a></li>
                             <li class="nav-item {{Request::is('feedback') ? 'active' : ''}}"><a class="nav-link" href="/feedback"><i class="fa fa-comments-o" aria-hidden="true"></i> Feedback </a></li>
+                            @role('admin')
+                                <li class="nav-item btn-group">
+                                <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> Admin </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <a  href="/homepets" class="dropdown-item">Manage HomePets</a>
+                                    <a  href="manage_pet.html" class="dropdown-item">Manage Pets</a>
+                                    <a  href="manage_users.html" class="dropdown-item">Manage Users</a>
+                                    <a  href="view_feedback.html" class="dropdown-item">View Feedback</a>
+                                </div>
+                                </li>
+                            @endrole
                         </ul>
                         <ul class="nav navbar-nav nav-flex-icons">
                             @if(\Auth::check())
