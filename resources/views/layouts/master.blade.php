@@ -46,7 +46,7 @@
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                     <a  href="/homepets" class="dropdown-item">Manage HomePets</a>
                                     <a  href="manage_pet.html" class="dropdown-item">Manage Pets</a>
-                                    <a  href="manage_users.html" class="dropdown-item">Manage Users</a>
+                                    <a  href="/users" class="dropdown-item">Manage Users</a>
                                     <a  href="view_feedback.html" class="dropdown-item">View Feedback</a>
                                 </div>
                                 </li>

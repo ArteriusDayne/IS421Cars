@@ -24,7 +24,7 @@
 					    <td>{{ $user['name'] }}</td>
 					    <td>{{ $user['email'] }}</td>
 					    <td>{{ $user['telephone'] }}</td>
-					     <td><a class="teal-text"><i class="fa fa-pencil"></i></a></td>
+					     <td><a href="{{ action('UsersController@edit', ['id' => $user->id]) }}" class="teal-text"><i class="fa fa-pencil"></i></a></td>
                         <td><a class="red-text"><i class="fa fa-times"></i></a></td>
 					</tr>
 					@endforeach

@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
-use App\Pets;
 use App\Sale;
+use App\Role;
+use Redirect;
+use Entrust;
 
 class UsersController extends Controller
 {
@@ -18,7 +20,9 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        if(!Entrust::hasRole('admin')) return Redirect::to('/');
+
+        return view('users.index')->with('users', User::all() );
     }
 
     /**
@@ -79,7 +83,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('users.edit')->with('user', User::find($id));
     }
 
     /**
@@ -91,7 +95,19 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        if($request['action'] == 'addRole')
+        {
+            $user = User::find($id);
+            $role = (Role::where('name', '=', $request['role'])->first());
+            $user->attachRole($role);
+        }
+        else if($request['action'] == 'deleteRole')
+        {
+            $user = User::find($id);
+            $role = (Role::where('name', '=', $request['role'])->first());
+            $user->detachRole($role);
+        }
     }
 
     /**
@@ -109,5 +125,4 @@ class UsersController extends Controller
     {
         return view('users.home', ['name' => \Auth::user()->name]);
     }
-
 }
