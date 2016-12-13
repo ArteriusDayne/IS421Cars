@@ -22,7 +22,7 @@ Route::get('/home', ['middleware' => 'auth', 'as' => 'home', 'uses' => 'UsersCon
 
 /* User Routes */
 Route::get('/create', ['as' => 'create', 'uses' => 'UsersController@create']);
-Route::resource('users', 'UsersController', ['only' => ['create', 'store']]);
+Route::resource('users', 'UsersController');
 
 /* Pet Routes */
 Route::resource('pets', 'PetsController');
