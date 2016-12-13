@@ -34,6 +34,6 @@ class PagesController extends Controller
 		return view('details');
 	}
 	public function managePets(){
-		return view('managePets')
+		return view('managePets');
 	}
 }
