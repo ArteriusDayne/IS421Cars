@@ -33,7 +33,6 @@ Route::resource('homepets', 'HomePetController');
 /* Static Page Routes */
 Route::get('/inventory','PagesController@inventory');
 Route::get('/schedule','PagesController@schedule');
-Route::get('/contact','PagesController@contact');
 Route::get('/about','PagesController@about');
 Route::get('/feedback','PagesController@feedback');
 Route::get('/subscribe','PagesController@subscribe');
