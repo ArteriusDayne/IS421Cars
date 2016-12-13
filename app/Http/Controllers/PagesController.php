@@ -33,4 +33,7 @@ class PagesController extends Controller
 	public function details(){
 		return view('details');
 	}
+	public function managePets(){
+		return view('managePets')
+	}
 }

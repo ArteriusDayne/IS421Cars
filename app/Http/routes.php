@@ -34,5 +34,6 @@ Route::resource('homepets', 'HomePetController');
 Route::get('/inventory','PagesController@inventory');
 Route::get('/schedule','PagesController@schedule');
 Route::get('/about','PagesController@about');
+Route::get('/managePets', 'PagesController@managePets');
 Route::get('/feedback','PagesController@feedback');
 Route::get('/subscribe','PagesController@subscribe');
