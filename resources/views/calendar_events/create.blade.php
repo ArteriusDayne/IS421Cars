@@ -1,3 +1,4 @@
+@extends('layouts.master')
 @extends('layouts.calendarEventLayout')
 
 @section('content')
