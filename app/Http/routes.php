@@ -35,3 +35,15 @@ Route::get('/contact','PagesController@contact');
 Route::get('/about','PagesController@about');
 Route::get('/feedback','PagesController@feedback');
 Route::get('/subscribe','PagesController@subscribe');
+
+
+Route::group(['middleware' => 'web'], function(){
+	Route::get('auth/google', [
+		'as' => 'auth-google',
+		'uses' => 'AuthController@redirectToProvider'
+	]);
+	Route::get('auth/google/callback', [
+		'as' => 'google-callback',
+		'uses' => 'AuthController@handleProviderCallback'
+	]);
+});
