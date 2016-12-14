@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Socialite;
 
 use App\Http\Requests;
 use App\User;
@@ -34,5 +35,12 @@ class AuthController extends Controller
     {
         \Auth::logout();
         return redirect()->route('login');
+    }
+
+    public function redirectToProvider(){
+        return Socialite::driver('google')->redirect();
+    }
+    public function handleProviderCallback(){
+        
     }
 }
