@@ -37,7 +37,9 @@ return [
     'google' => [
         'client_id' => '331709663044-ri6basml00uvrrvsto2i03dukd56um3m.apps.googleusercontent.com',
         'client_secret' => 'rJn9F2afW8Vph-TL1Ykga7Ac',
-        'redirect' => 'https://pupsnfluff.herokuapp.com',
+        // 'redirect' => 'http://is421carlot.local.com:8000/auth/google/callback',
+        // 'redirect' => 'http://is421carlot.local.com:8000',
+        'redirect' => 'https://pupsnfluff.herokuapp.com/auth/google/callback',
     ],
 
 ];

@@ -18,6 +18,7 @@ class AuthController extends Controller
 
     public function handleLogin(Request $request)
     {
+        dd($request);
         $this->validate($request, User::$login_validation_rules);
 
     	$data = $request->only('username', 'password');
@@ -40,7 +41,9 @@ class AuthController extends Controller
     public function redirectToProvider(){
         return Socialite::driver('google')->redirect();
     }
+
     public function handleProviderCallback(){
-        
+        $user = Socialite::driver('google')->user();
+        dd($user);
     }
 }
