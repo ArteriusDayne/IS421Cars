@@ -34,5 +34,10 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    'google' => [
+        'client_id' => '331709663044-ri6basml00uvrrvsto2i03dukd56um3m.apps.googleusercontent.com',
+        'client_secret' => 'rJn9F2afW8Vph-TL1Ykga7Ac',
+        'redirect' => 'https://pupsnfluff.herokuapp.com',
+    ],
 
 ];
