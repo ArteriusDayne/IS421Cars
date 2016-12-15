@@ -1,6 +1,4 @@
 
-
-
 <head>
 
     <meta charset="utf-8">
@@ -42,11 +40,13 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>TITLE</th>
+                    <th>NAME</th>
+                    <th>DESCRIPTION</th>
+                    <th>LOCATION</th>
                     <th>START</th>
                     <th>END</th>
-                    <th>IS_ALL_DAY</th>
-                    <th>BACKGROUND_COLOR</th>
+
+
                     <th class="text-right">OPTIONS</th>
                 </tr>
                 </thead>
@@ -57,11 +57,12 @@
                 @foreach($calendar_events as $calendar_event)
                     <tr>
                         <td>{{$calendar_event->id}}</td>
-                        <td>{{$calendar_event->title}}</td>
-                        <td>{{$calendar_event->start}}</td>
-                        <td>{{$calendar_event->end}}</td>
-                        <td>{{$calendar_event->is_all_day}}</td>
-                        <td>{{$calendar_event->background_color}}</td>
+                        <td>{{$calendar_event->name}}</td>
+                        <td>{{$calendar_event->description}}</td>
+                        <td>{{$calendar_event->location}}</td>
+                        <td>{{$calendar_event->eventstart}}</td>
+                        <td>{{$calendar_event->eventend}}</td>
+
 
                         <td class="text-right">
                             <a class="btn btn-primary" href="{{ route('calendar_events.show', $calendar_event->id) }}">View</a>
@@ -148,59 +149,102 @@
         <script type="text/javascript" src="js/jqwidgets/jqxinput.js"></script>
         <script type="text/javascript" src="js/jqwidgets/globalization/globalize.js"></script>
         <script type="text/javascript" src="js/jqwidgets/globalization/globalize.culture.de-DE.js"></script>
+
+       <!--
+        <?php $counter=count($calendar_events);
+        for($x=0;$x<$counter;$x++){
+            echo($calendar_events[$x]->name);
+            echo($calendar_events[$x]->description);
+            echo($calendar_events[$x]->location);
+            echo ($calendar_events[$x]->eventstart);
+            echo ($calendar_events[$x]->eventend);
+            echo ("<br>");
+        }
+
+        ?>
+        -->
         <script type="text/javascript">
-            var counter=0;
-                $(document).ready(function () {
 
-                    var appointments=new Array();
-                            <?php foreach ($calendar_events as $calendar_event)?>
+            $(document).ready(function () {
+                var appointments = new Array();
 
 
-                     appointments[counter] = {
-                        id: "<?php echo $calendar_event->id;?>",
-                        title: "<?php echo $calendar_event->title;?>",
-                        start: "<?php echo $calendar_event->start;?>",
-                        end: "<?php echo $calendar_event->end;?>",
-                        is_background_color: "<?php echo $calendar_event->is_all_day;?>"
+                        var calendar_events= <?php echo $calendar_events;?>;
 
 
-                    }
-                    counter+=1;
-                    console.log(counter);
-                    // prepare the data
+                //console.log(calendar_events[0]['name']);
+                        var counter=calendar_events.length;
+                        for (var x=0;x<counter;x++){
+
+
+                            var appointment = {
+                                id: calendar_events[x]['id'],
+                                description: calendar_events[x]['description'],
+                                location: calendar_events[x]['location'],
+                                subject: calendar_events[x]['name'],
+                                calendar: calendar_events[x]['location'],
+                                start: calendar_events[x]['eventstart'],
+                                end: calendar_events[x]['eventend']
+
+                            }
+                            appointments.push(appointment);
+                        }
+
+
 
 
                 // prepare the data
-
                 var source =
                 {
                     dataType: "array",
                     dataFields: [
                         {name: 'id', type: 'string'},
-                        {name: 'title', type: 'string'},
-                        {name: 'start', type: 'string'},
-                        {name: 'end', type: 'string'},
-                        {name: 'is_all_day', type: 'string'},
-                        {name: 'background-color', type: 'string'}
+                        {name: 'description', type: 'string'},
+                        {name: 'location', type: 'string'},
+                        {name: 'subject', type: 'string'},
+                        {name: 'calendar', type: 'string'},
+                        {name: 'start', type: 'date'},
+                        {name: 'end', type: 'date'}
                     ],
                     id: 'id',
                     localData: appointments
                 };
                 var adapter = new $.jqx.dataAdapter(source);
                 $("#scheduler").jqxScheduler({
-                    date: new $.jqx.date(new Date()),
+                    date: new $.jqx.date(),
                     width: 1200,
-                    height: 600,
+                    height: 700,
                     source: adapter,
-                    view: 'monthView',
-
+                    view: 'weekView',
                     showLegend: true,
 
+
+                    ready: function () {
+                        $("#scheduler").jqxScheduler('ensureAppointmentVisible', 'id1');
+                        $("#scheduler").jqxScheduler({ editDialog: false});
+                    },
+                    resources:
+                    {
+                        colorScheme: "scheme05",
+                        dataField: "calendar",
+                        source: new $.jqx.dataAdapter(source)
+                    },
+                    appointmentDataFields:
+                    {
+                        from: "start",
+                        to: "end",
+                        id: "id",
+                        description: "description",
+                        location: "location",
+                        subject: "subject",
+                        resourceId: "calendar"
+                    },
                     views:
                             [
+                                'monthView',
                                 'dayView',
-                                'weekView',
-                                'monthView'
+                                'weekView'
+
                             ]
                 });
             });
