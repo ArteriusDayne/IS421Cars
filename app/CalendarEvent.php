@@ -3,13 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use MaddHatter\LaravelFullcalendar\Event;
 use DB;
 
-class CalendarEvent extends Model implements Event
+class CalendarEvent extends Model
 {
+    protected $table = 'calendar_events';
 
-    protected $dates = ['start', 'end'];
 
     /**
      * Get the event's title
@@ -18,7 +17,7 @@ class CalendarEvent extends Model implements Event
      */
     public function getTitle()
     {
-        return $this->title;
+        return $this->name;
     }
 
     /**
@@ -26,19 +25,16 @@ class CalendarEvent extends Model implements Event
      *
      * @return bool
      */
-    public function isAllDay()
-    {
-        return $this->is_all_day;
-    }
+
 
     /**
      * Get the start time
      *
      * @return DateTime
      */
-    public function getStart()
+    public function getEventStart()
     {
-        return $this->start;
+        return $this->eventstart;
     }
 
     /**
@@ -46,9 +42,9 @@ class CalendarEvent extends Model implements Event
      *
      * @return DateTime
      */
-    public function getEnd()
+    public function getEventEnd()
     {
-        return $this->end;
+        return $this->eventend;
     }
 
     /**
@@ -61,15 +57,5 @@ class CalendarEvent extends Model implements Event
         return $this->id;
     }
 
-    /**
-     * Optional FullCalendar.io settings for this event
-     *
-     * @return array
-     */
-    public function getEventOptions()
-    {
-        return [
-            'color' => $this->background_color,
-        ];
-    }
+
 }
