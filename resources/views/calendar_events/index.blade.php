@@ -215,7 +215,7 @@
                     width: 1200,
                     height: 700,
                     source: adapter,
-                    view: 'weekView',
+                    view: 'monthView',
                     showLegend: true,
 
 
