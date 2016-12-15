@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="page-header">
-        <h1>CalendarEvents / Create </h1>
+        <h1>Calendar Events / Create </h1>
     </div>
 
 
@@ -14,25 +14,26 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                 <div class="form-group">
-                     <label for="title">TITLE</label>
-                     <input type="text" name="title" class="form-control" value=""/>
+                     <label for="title">Name</label>
+                     <input type="text" name="name" class="form-control" value=""/>
+                </div>
+                <div class="form-group">
+                    <label for="title">Description</label>
+                    <input type="text" name="description" class="form-control" value=""/>
+                </div>
+                <div class="form-group">
+                    <label for="title">Location</label>
+                    <input type="text" name="location" class="form-control" value=""/>
                 </div>
                     <div class="form-group">
-                     <label for="start">START  (Date and time must be formatted Year-Month-Day Hours:Minutes:Seconds)</label>
-                     <input type="text" name="start" class="form-control" value=""/>
+                     <label for="start">START (Date and time must be formatted Year-Month-Day Hours:Minutes:Seconds)</label>
+                     <input type="text" name="eventstart" class="form-control" value=""/>
                 </div>
                     <div class="form-group">
-                     <label for="end">END   (Date and time must be formatted Year-Month-Day Hours:Minutes:Seconds)</label>
-                     <input type="text" name="end" class="form-control" value=""/>
+                     <label for="end">END (Date and time must be formatted Year-Month-Day Hours:Minutes:Seconds)</label>
+                     <input type="text" name="eventend" class="form-control" value=""/>
                 </div>
-                    <div class="form-group">
-                     <label for="is_all_day">IS_ALL_DAY</label>
-                     <input type="text" name="is_all_day" class="form-control" value=""/>
-                </div>
-                    <div class="form-group">
-                     <label for="background_color">BACKGROUND_COLOR</label>
-                     <input type="text" name="background_color" class="form-control" value=""/>
-                </div>
+
 
 
 
