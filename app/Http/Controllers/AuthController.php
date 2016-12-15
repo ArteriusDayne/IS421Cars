@@ -18,7 +18,6 @@ class AuthController extends Controller
 
     public function handleLogin(Request $request)
     {
-        dd($request);
         $this->validate($request, User::$login_validation_rules);
 
     	$data = $request->only('username', 'password');
