@@ -33,6 +33,7 @@ class CreateCalendarEventsTable extends Migration {
 			$table->string('location',100);
 			$table->timestamp('eventstart');
 			$table->timestamp('eventend');
+			$table->timestamps();
 
         });
 	}
