@@ -15,29 +15,30 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                 <div class="form-group">
-                    <label for="nome">ID</label>
+                    <label for="id">ID</label>
                     <p class="form-control-static">{{$calendar_event->id}}</p>
                 </div>
                 <div class="form-group">
-                     <label for="title">TITLE</label>
-                     <input type="text" name="title" class="form-control" value="{{$calendar_event->title}}"/>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" class="form-control" value="{{$calendar_event->name}}"/>
+                </div>
+                <div class="form-group">
+                     <label for="title">Description</label>
+                     <input type="text" name="description" class="form-control" value="{{$calendar_event->description}}"/>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" name="location" class="form-control" value="{{$calendar_event->location}}"/>
                 </div>
                     <div class="form-group">
-                     <label for="start">START (Date and time must be formatted Year-Month-Day Hours:Minutes:Seconds)</label>
-                     <input type="text" name="start" class="form-control" value="{{$calendar_event->start}}"/>
+                     <label for="">START (Date and time must be formatted Year-Month-Day Hours:Minutes:Seconds)</label>
+                     <input type="text" name="eventstart" class="form-control" value="{{$calendar_event->eventstart}}"/>
                 </div>
                     <div class="form-group">
                      <label for="end">END   (Date and time must be formatted Year-Month-Day Hours:Minutes:Seconds)</label>
-                     <input type="text" name="end" class="form-control" value="{{$calendar_event->end}}"/>
+                     <input type="text" name="eventend" class="form-control" value="{{$calendar_event->eventend}}"/>
                 </div>
-                    <div class="form-group">
-                     <label for="is_all_day">IS_ALL_DAY</label>
-                     <input type="text" name="is_all_day" class="form-control" value="{{$calendar_event->is_all_day}}"/>
-                </div>
-                    <div class="form-group">
-                     <label for="background_color">BACKGROUND_COLOR</label>
-                     <input type="text" name="background_color" class="form-control" value="{{$calendar_event->background_color}}"/>
-                </div>
+
 
 
 
