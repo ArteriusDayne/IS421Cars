@@ -16,24 +16,25 @@
                 </div>
                 <div class="form-group">
                      <label for="title">TITLE</label>
-                     <p class="form-control-static">{{$calendar_event->title}}</p>
+                     <p class="form-control-static">{{$calendar_event->name}}</p>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <p class="form-control-static">{{$calendar_event->description}}</p>
+                </div>
+                <div class="form-group">
+                    <label for="start">Location</label>
+                    <p class="form-control-static">{{$calendar_event->location}}</p>
                 </div>
                     <div class="form-group">
                      <label for="start">START</label>
-                     <p class="form-control-static">{{$calendar_event->start}}</p>
+                     <p class="form-control-static">{{$calendar_event->eventstart}}</p>
                 </div>
                     <div class="form-group">
                      <label for="end">END</label>
-                     <p class="form-control-static">{{$calendar_event->end}}</p>
+                     <p class="form-control-static">{{$calendar_event->eventend}}</p>
                 </div>
-                    <div class="form-group">
-                     <label for="is_all_day">IS_ALL_DAY</label>
-                     <p class="form-control-static">{{$calendar_event->is_all_day}}</p>
-                </div>
-                    <div class="form-group">
-                     <label for="background_color">BACKGROUND_COLOR</label>
-                     <p class="form-control-static">{{$calendar_event->background_color}}</p>
-                </div>
+
             </form>
 
 
