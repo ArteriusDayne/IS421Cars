@@ -1,8 +1,9 @@
 <?php namespace App\Http\Controllers;
 
 use App\CalendarEvent;
-use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Http\Requests;
+use Redirect;
 
 class CalendarEventController extends Controller
 {
@@ -38,12 +39,12 @@ class CalendarEventController extends Controller
     public function store(Request $request)
     {
         $calendar_event = new CalendarEvent();
-
-        $calendar_event->title            = $request->input("title");
-        $calendar_event->start            = $request->input("start");
-        $calendar_event->end              = $request->input("end");
-        $calendar_event->is_all_day       = $request->input("is_all_day");
-        $calendar_event->background_color = $request->input("background_color");
+        $calendar_event->id = CalendarEvent::all()->last()->id + 1;
+        $calendar_event->name                = $request->input("name");
+        $calendar_event->description       = $request->input("description");
+        $calendar_event->location           = $request->input("location");
+        $calendar_event->eventstart            = $request->input("eventstart");
+        $calendar_event->eventend              = $request->input("eventend");
 
         $calendar_event->save();
 
@@ -58,6 +59,8 @@ class CalendarEventController extends Controller
      */
     public function show($id)
     {
+
+        //var_dump($id);
         $calendar_event = CalendarEvent::findOrFail($id);
 
         return view('calendar_events.show', compact('calendar_event'));
@@ -85,17 +88,24 @@ class CalendarEventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $calendar_event = CalendarEvent::findOrFail($id);
 
-        $calendar_event->title            = $request->input("title");
-        $calendar_event->start            = $request->input("start");
-        $calendar_event->end              = $request->input("end");
-        $calendar_event->is_all_day       = $request->input("is_all_day");
-        $calendar_event->background_color = $request->input("background_color");
+        $calendar_event = CalendarEvent::findOrFail($id);
+        $calendar_event->name                   = $request->input("name");
+        $calendar_event->description       = $request->input("description");
+        $calendar_event->location           = $request->input("location");
+        $calendar_event->eventstart            = $request->input("eventstart");
+        $calendar_event->eventend              = $request->input("eventend");
+
+
+        // create table calendar_events(id int primary key not null,
+        // name char(100),description char(100), location char(100),
+        //eventStart timestamp, eventEnd timestamp,
+        //created_at timestamp, updated_at timestamp );
 
         $calendar_event->save();
 
         return redirect()->route('calendar_events.index')->with('message', 'Item updated successfully.');
+
     }
 
     /**
