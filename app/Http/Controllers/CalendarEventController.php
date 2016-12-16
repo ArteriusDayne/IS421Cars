@@ -39,7 +39,7 @@ class CalendarEventController extends Controller
     public function store(Request $request)
     {
         $calendar_event = new CalendarEvent();
-        $calendar_event->id = CalendarEvent::all()->last()->id + 1;
+         $calendar_event->id = CalendarEvent::all()->sortBy($calendar_event->id)->last()->id + 1;
         $calendar_event->name                = $request->input("name");
         $calendar_event->description       = $request->input("description");
         $calendar_event->location           = $request->input("location");
