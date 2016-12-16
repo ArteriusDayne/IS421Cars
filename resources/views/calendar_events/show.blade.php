@@ -40,8 +40,7 @@
 
 
             <a class="btn btn-default" href="{{ route('calendar_events.index') }}">Back</a>
-            <a class="btn btn-warning" href="{{ route('calendar_events.edit', $calendar_event->id) }}">Edit</a>
-            <form action="#/$calendar_event->id" method="DELETE" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };"><button class="btn btn-danger" type="submit">Delete</button></form>
+
         </div>
     </div>
 
