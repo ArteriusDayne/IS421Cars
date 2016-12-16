@@ -8,7 +8,7 @@
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="331709663044-ri6basml00uvrrvsto2i03dukd56um3m.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <title>Puppies & Fluffies  Page</title>
+    <title>Schedule</title>
 
     <!-- Font Awesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
@@ -66,8 +66,10 @@
 
                         <td class="text-right">
                             <a class="btn btn-primary" href="{{ route('calendar_events.show', $calendar_event->id) }}">View</a>
+                            @if(Entrust::hasRole('admin'))
                             <a class="btn btn-warning " href="{{ route('calendar_events.edit', $calendar_event->id) }}">Edit</a>
                             <form action="{{ route('calendar_events.destroy', $calendar_event->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };"><input type="hidden" name="_method" value="DELETE"><input type="hidden" name="_token" value="{{ csrf_token() }}"> <button class="btn btn-danger" type="submit">Delete</button></form>
+                        @endif
                         </td>
                     </tr>
 
@@ -75,8 +77,9 @@
 
                 </tbody>
             </table>
-
+            @if(Entrust::hasRole('admin'))
             <a class="btn btn-success" href="{{ route('calendar_events.create') }}">Create</a>
+            @endif
         </div>
 
     </div>
@@ -87,21 +90,33 @@
         <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx"><i class="fa fa-bars"></i></button>
         <div class="container">
             <div class="collapse navbar-toggleable-xs" id="collapseEx">
-                <a class="navbar-brand" href="/" target="_blank">Puppies & Fluffies</a>
+                <a class="navbar-brand" href="/" >Puppies & Fluffies</a>
                 <ul class="nav navbar-nav">
-                    @if(\Auth::check())
-                        <li class="nav-item {{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="/home"><i class="fa fa-home" aria-hidden="true"></i> Account <span class="sr-only">(current)</span></a></li>
-                    @else
-                        <li class="nav-item {{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="/"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a></li>
-                    @endif
+                    <li class="nav-item {{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="/"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a></li>
                     <li class="nav-item {{Request::is('pets') ? 'active' : ''}}"><a class="nav-link" href="/pets"><i class="fa fa-paw" aria-hidden="true"></i> Adoptions </a></li>
+
+
+
                     <li class="nav-item {{Request::is('calendar_events') ? 'active' : ''}}"><a class="nav-link" href="/calendar_events"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Appointments</a></li>
+
                     <li class="nav-item {{Request::is('about') ? 'active' : ''}}"><a class="nav-link" href="/about"><i class="fa fa-info" aria-hidden="true"></i> About</a></li>
-                    <li class="nav-item {{Request::is('contact') ? 'active' : ''}}"><a class="nav-link" href="/contact"><i class="fa fa-volume-control-phone" aria-hidden="true"></i> Contact</a></li>
                     <li class="nav-item {{Request::is('feedback') ? 'active' : ''}}"><a class="nav-link" href="/feedback"><i class="fa fa-comments-o" aria-hidden="true"></i> Feedback </a></li>
+                    @role('admin')
+                    <li class="nav-item btn-group">
+                        <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> Admin </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <a  href="/homepets" class="dropdown-item">Manage HomePets</a>
+                            <a  href="/managePets" class="dropdown-item">Manage Pets</a>
+                            <a  href="/users" class="dropdown-item">Manage Users</a>
+                            <a  href="view_feedback.html" class="dropdown-item">View Feedback</a>
+                        </div>
+                    </li>
+                    @endrole
                 </ul>
                 <ul class="nav navbar-nav nav-flex-icons">
                     @if(\Auth::check())
+                        <li class="nav-item {{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="/home"><i class="fa fa-user" aria-hidden="true"></i> My Account  <span class="sr-only">(current)</span></a>
+                        </li>
                         <li class="nav-link nav-item">
                             {{ link_to_route('logout', 'Sign out') }} <i class="fa fa-sign-out" aria-hidden="true"></i>
                         </li>
