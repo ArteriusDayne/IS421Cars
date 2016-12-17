@@ -7,14 +7,13 @@
 @role('admin')
     <br>
     @include('admin.users')
-    <a href="/homepets">View Pets on Homepage</a><br>
+    
 @endrole
 
 @role('provider')
     <a href="/pets/create">Add new pet for Adoption</a><br>
 @endrole
 
-<a href="#">Request to be a Provider!</a><br>
 @if( !\Auth::user()->hasRole('adopter') )
 <?php $c= DB::table('pets')
         ->Join('users', 'pets.userid', '=', 'users.id')
