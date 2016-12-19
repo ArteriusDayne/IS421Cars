@@ -24,17 +24,19 @@ class PagesController extends Controller
 	public function feedback(){
 		return view('feedback');
 	}
-	
 	public function subscribe(){
 		return view('subscribe');
-	}
-	public function contact(){
-		return view('contact');
 	}
 	public function sale(){
 		return view('sale');
 	}
 	public function details(){
 		return view('details');
+	}
+	public function managePets(){
+		return view('managePets');
+	}
+	public function viewFeedback(){
+		return view('viewFeedback');
 	}
 }

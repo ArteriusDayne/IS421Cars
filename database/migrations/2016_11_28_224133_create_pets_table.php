@@ -29,7 +29,7 @@ class CreatePetsTable extends Migration
 
         Schema::table('pets', function($table){
             $table->foreign('userid')->references('id')->on('users');
-        });
+       	});
     }
 
     /**

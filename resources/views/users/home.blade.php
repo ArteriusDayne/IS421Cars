@@ -2,22 +2,18 @@
 @extends('layouts.master')
 
 @section('page_content')
-<h3 style="text-align:center">Welcome, {{ $name }}</h3>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<head style="text-align:center">Welcome, {{ $name }}</head>
 
 @role('admin')
     <br>
     @include('admin.users')
-    <a href="/homepets">View Pets on Homepage</a><br>
+    
 @endrole
 
 @role('provider')
     <a href="/pets/create">Add new pet for Adoption</a><br>
 @endrole
 
-<a href="#">Request to be a Provider!</a><br>
 @if( !\Auth::user()->hasRole('adopter') )
 <?php $c= DB::table('pets')
         ->Join('users', 'pets.userid', '=', 'users.id')

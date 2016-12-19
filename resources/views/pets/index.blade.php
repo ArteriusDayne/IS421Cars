@@ -7,15 +7,18 @@
 			@foreach($pets as $pet)
 				<div class ="col-md-3" style="padding:0;">
 						<div class="card">
-
-							<img class="card-img-top img" src="{{ $pet['image'] }}" alt="Pet Image">
-
+							
+							<a href="{{ action('PetsController@show', ['id' => $pet['id']]) }}">
+							<img class="card-img-top img" src="{{ $pet['image'] }}" alt="Pet Image" style= "display:block; max-width:400px; max-height:200px; width:100%; height:10em;"
+							</a>
 							<div class="card-block">
 								<h4 class="card-title">{{ $pet['name'] }}</h4>
-								<p class="text-muted text-center">
-								{{ $pet['description'] }}
-								<br>
+								<p>
 								Location: {{ $pet['location'] }}</p>
+								<p class="text-muted text-center"style="height:1.875em;  line-height:0.9375em; overflow:hidden;
+								text-overflow:ellipsis;">
+								{{ $pet['description'] }}
+								</p>
 								<a href="{{ action('PetsController@show', ['id' => $pet['id']]) }}">View more details</a>
 							</div>
 						</div>
