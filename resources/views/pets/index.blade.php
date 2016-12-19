@@ -11,7 +11,6 @@
 							<a href="{{ action('PetsController@show', ['id' => $pet['id']]) }}">
 							<img class="card-img-top img" src="{{ $pet['image'] }}" alt="Pet Image" style= "display:block; max-width:400px; max-height:200px; width:100%; height:10em;"
 							</a>
-							
 							<div class="card-block">
 								<h4 class="card-title">{{ $pet['name'] }}</h4>
 								<p>
