@@ -214,6 +214,7 @@ return [
         'Analytics' => Ipunkt\LaravelAnalytics\AnalyticsFacade::class,
         'Calendar'   =>MaddHatter\LaravelFullcalendar\ServiceProvider::class,
         'Image' => Intervention\Image\Facades\Image::class,
+      
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
