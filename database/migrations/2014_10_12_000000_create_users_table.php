@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('account_type')->default('normal');
-            $table->string('sns_acc_id');
+            $table->string('sns_acc_id')->default('null');
             $table->rememberToken();
             $table->timestamps();
         });
