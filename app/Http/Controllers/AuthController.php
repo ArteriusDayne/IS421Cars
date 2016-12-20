@@ -50,7 +50,7 @@ class AuthController extends Controller
        	// dd($user);
         $checkUser = User::where('email', $user->email)->first();
         if ($checkUser){
-            return redirect()->intended('home');
+            return redirect()->intended('pets');
         }else{
             User::create([
             'email' => $user->email,
@@ -61,7 +61,7 @@ class AuthController extends Controller
             'sns_acc_id' => $user->id
             ]);
 
-            return redirect()->intended('home');
+            return redirect()->intended('pets');
         }
     }
 }
