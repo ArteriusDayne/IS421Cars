@@ -47,21 +47,21 @@ class AuthController extends Controller
     }
     public function handleProviderCallback(){
         $user = Socialite::driver('google')->user();
-        // dd($user);
-        $checkUser = User::where('username', $user['email'])->first();
-        if ($checkUser){
-            return redirect()->intended('home');
-        }else{
-            User::create([
-            'username' => $user['email'],
-            'password' => bcrypt(bcrypt($user['id'])),
-            'firstName' => $user['email'],
-            'lastName' => $user['email'],
-            'account_type' => 'google',
-            'sns_acc_id' => $user['id']
-            ]);
+        dd($user);
+//         $checkUser = User::where('username', $user['email'])->first();
+//         if ($checkUser){
+//             return redirect()->intended('home');
+//         }else{
+//             User::create([
+//             'username' => $user['email'],
+//             'password' => bcrypt(bcrypt($user['id'])),
+//             'firstName' => $user['email'],
+//             'lastName' => $user['email'],
+//             'account_type' => 'google',
+//             'sns_acc_id' => $user['id']
+//             ]);
 
-            return redirect()->intended('home');
-        }
+//             return redirect()->intended('home');
+//         }
     }
 }
