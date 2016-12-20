@@ -38,10 +38,7 @@ return [
     'google' => [
         'client_id' => env('google_client_id'),
         'client_secret' => env('google_client_secret'),
-        // 'redirect' => 'http://is421carlot.local.com:8000/auth/google/callback', 
-        // 'redirect' => 'https://pupsnfluff.herokuapp.com/auth/google/callback', #dennis
-        // 'redirect' => 'https://laravel-qa.herokuapp.com/auth/google/callback', #laravel-qa
-        'redirect' => 'http://www.puppiesandfluffies.com/auth/google/callback', #laravel-db maybe
+        'redirect' => env('google_redirect'),
     ],
 
 ];
