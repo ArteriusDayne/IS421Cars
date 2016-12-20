@@ -162,7 +162,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Laravel\Socialite\SocialiteServiceProvider::class,
+//         Laravel\Socialite\SocialiteServiceProvider::class,
 
     ],
 
@@ -215,7 +215,7 @@ return [
         'Analytics' => Ipunkt\LaravelAnalytics\AnalyticsFacade::class,
         'Calendar'   =>MaddHatter\LaravelFullcalendar\ServiceProvider::class,
         'Image' => Intervention\Image\Facades\Image::class,
-        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+//         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 
