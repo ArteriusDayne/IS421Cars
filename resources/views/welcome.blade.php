@@ -36,7 +36,7 @@
                 <!--Caption-->
                 <div class="carousel-caption">
                     <div class="animated fadeInDown">
-                        <h3 class="h3-responsive">{{$pet->caption}}</h3>
+                        <h3 class="h3-responsive">{{$pet->name}}</h3>
                     </div>
                 </div>
                 <!--Caption-->
