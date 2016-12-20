@@ -47,7 +47,9 @@ class AuthController extends Controller
     }
     public function handleProviderCallback(){
         $user = Socialite::driver('google')->user();
-       	print_r($user.email);
+       	var_dump($user->email);
+	var_dump($user['$email']);
+	var_dump($user['email']);    
 //         $checkUser = User::where('email', $user['email'])->first();
 //         if ($checkUser){
 //             return redirect()->intended('home');
