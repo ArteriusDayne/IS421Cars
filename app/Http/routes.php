@@ -49,3 +49,14 @@ Route::get('/managePets', 'PagesController@managePets');
 Route::get('/feedback','PagesController@feedback');
 Route::get('/view-feedback', 'PagesController@viewFeedback');
 Route::get('/subscribe','PagesController@subscribe');
+
+Route::group(['middleware' => 'web'], function(){
+	Route::get('auth/google', [
+		'as' => 'auth-google',
+		'uses' => 'AuthController@redirectToProvider'
+	]);
+	Route::get('auth/google/callback', [
+		'as' => 'google-callback',
+		'uses' => 'AuthController@handleProviderCallback'
+	]);
+});

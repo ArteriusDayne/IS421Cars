@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Socialite;
 
 use App\Http\Requests;
 use App\User;
@@ -39,5 +40,28 @@ class AuthController extends Controller
     {
         \Auth::logout();
         return redirect()->route('login');
+    }
+
+    public function redirectToProvider(){
+        return Socialite::driver('google')->redirect();
+    }
+    public function handleProviderCallback(){
+        $user = Socialite::driver('google')->user();
+       	// dd($user);
+        $checkUser = User::where('email', $user->email)->first();
+        if ($checkUser){
+            return redirect()->intended('pets');
+        }else{
+            User::create([
+            'email' => $user->email,
+            'password' => bcrypt(bcrypt($user->id)),
+            'telephone' => '1234567890',
+            'name' => $user->email,
+            'account_type' => 'google',
+            'sns_acc_id' => $user->id
+            ]);
+
+            return redirect()->intended('pets');
+        }
     }
 }
