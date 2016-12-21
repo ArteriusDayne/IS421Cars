@@ -1,6 +1,7 @@
 @extends('layouts.master')
 @section('page_content')
 <div class="card">
+	<div class="card-block">
     <!--Header-->
     <div class="text-xs-center">
         <h3><i class="fa fa-envelope"></i>FEEDBACK:</h3>
@@ -11,7 +12,7 @@
 
 	<div class="md-form">
 		<i class="fa fa-envelope prefix"></i>
-		<input type="name" id="form9" class="form-control validate">
+		<input type="text" id="form9" class="form-control validate">
 		<label for="form9" data-error="wrong" date-success="right">Name: </label>
 	</div>
 	<div class="md-form">
@@ -36,6 +37,7 @@
 	<center>
 		<a href="thankyouf.html" class="btn btn-danger" role="button">Submit</a>
 	</center>
+	</div>
 </div>
 @stop
 

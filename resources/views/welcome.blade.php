@@ -20,6 +20,7 @@
     <!--Slides-->
     <div class="carousel-inner" role="listbox">
 
+
     @foreach($homePets as $index => $pet)
 
         @if($index == 0)
@@ -29,14 +30,15 @@
         @endif
                 <!--Mask color-->
                 <div class="view hm-black-slight">
-                    <img src={{$pet->image}} class="img-fluid" alt="Corgis">
-                    <div class="full-bg-img">
+                    <img   src={{$pet->image}} class="img-fluid" alt="Corgis">
+                    <div  class="full-bg-img">
                     </div>
                 </div>
                 <!--Caption-->
                 <div class="carousel-caption">
                     <div class="animated fadeInDown">
-                        <h3 class="h3-responsive">{{$pet->name}}</h3>
+                       <a href="{{ action('PetsController@show', ['id' => $pet->pet_id ] ) }}" style="color:white;"> <h3 class="h3-responsive">{{$pet->name}}</h3>
+                       </a>
                     </div>
                 </div>
                 <!--Caption-->
@@ -71,9 +73,9 @@
             <div class="card">
                 <img class="card-img-top img" src={{$pet->image}} alt="Pet">
                 <div class="card-block">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a class="btn btn-primary dbutton" href="deatils.html" role="button">Details</a>
+                    <h4 class="card-title">{{$pet->name}}</h4>
+                    <p class="card-text">{{$pet->description}}</p>
+                    <a class="btn btn-primary dbutton" href="{{ action('PetsController@show', ['id' => $pet->pet_id ] ) }}" role="button">Details</a>
                 </div>
             </div><br>
         </div>
@@ -82,5 +84,4 @@
 
     </div>
 </div>
-
 @endsection
