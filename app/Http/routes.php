@@ -47,8 +47,9 @@ Route::get('/contact','PagesController@contact');
 Route::get('/about','PagesController@about');
 Route::get('/managePets', 'PagesController@managePets');
 Route::get('/feedback','PagesController@feedback');
-Route::get('/view-feedback', 'PagesController@viewFeedback');
+Route::get('/viewFeedback', 'PagesController@viewFeedback');
 Route::get('/subscribe','PagesController@subscribe');
+Route::get('/manageCalendar','PagesController@manageCalendar');
 
 Route::group(['middleware' => 'web'], function(){
 	Route::get('auth/google', [

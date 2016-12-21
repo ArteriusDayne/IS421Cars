@@ -50,7 +50,8 @@
                                     <a  href="/homepets" class="dropdown-item">Manage HomePets</a>
                                     <a  href="/managePets" class="dropdown-item">Manage Pets</a>
                                     <a  href="/users" class="dropdown-item">Manage Users</a>
-                                    <a  href="/view-feedback" class="dropdown-item">View Feedback</a>
+                                    <a  href="/viewFeedback" class="dropdown-item">View Feedback</a>
+                                    <a  href="/manageCalendar" class="dropdown-item">Manage Calendar</a>
                                 </div>
                                 </li>
                             @endrole
