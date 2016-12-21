@@ -42,4 +42,7 @@ class PagesController extends Controller
 	public function manageCalendar(){
 		return view('manageCalendar');
 	}
+	public function thankyou(){
+		return view('thankyou');
+	}
 }

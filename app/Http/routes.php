@@ -47,6 +47,7 @@ Route::get('/contact','PagesController@contact');
 Route::get('/about','PagesController@about');
 Route::get('/managePets', 'PagesController@managePets');
 Route::get('/feedback','PagesController@feedback');
+Route::get('/thankyou','PagesController@thankyou');
 Route::get('/viewFeedback', 'PagesController@viewFeedback');
 Route::get('/subscribe','PagesController@subscribe');
 Route::get('/manageCalendar','PagesController@manageCalendar');
