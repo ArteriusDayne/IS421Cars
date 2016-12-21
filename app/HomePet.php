@@ -13,19 +13,19 @@ class HomePet extends Model
     public static function getHomePets()
     {
     	return 
-    	DB::table('home_pets')->join('pets', 'pets.id', '=', 'home_pets.pet_id')->select('home_pets.id','pets.name', 'home_pets.caption', 'home_pets.location','pets.image')->get();
+    	DB::table('home_pets')->join('pets', 'pets.id', '=', 'home_pets.pet_id')->select('home_pets.id','pets.id','pets.name', 'home_pets.caption', 'home_pets.location','pets.image')->get();
     }
 
     //return base64 images of pets on front page carousel
     public static function getCarouselPets()
     {
     	return 
-    	DB::table('home_pets')->join('pets', 'pets.id', '=', 'home_pets.pet_id')->select('home_pets.id','pets.name', 'home_pets.caption', 'home_pets.location','pets.image')->where('home_pets.location', '=', 'carousel')->get();
+    	DB::table('home_pets')->join('pets', 'pets.id', '=', 'home_pets.pet_id')->select('home_pets.id', 'home_pets.pet_id' ,'pets.id' ,'pets.name', 'home_pets.caption','pets.description' ,'home_pets.location','pets.image')->where('home_pets.location', '=', 'carousel')->get();
     }
 
     public static function getFeaturedPets()
     {
     	return 
-    	DB::table('home_pets')->join('pets', 'pets.id', '=', 'home_pets.pet_id')->select('home_pets.id','pets.name', 'home_pets.caption', 'home_pets.location','pets.image')->where('home_pets.location', '=', 'featured')->get();
+    	DB::table('home_pets')->join('pets', 'pets.id', '=', 'home_pets.pet_id')->select('home_pets.id','home_pets.pet_id' ,'pets.id','pets.name', 'home_pets.caption','pets.description', 'home_pets.location','pets.image')->where('home_pets.location', '=', 'featured')->get();
     }
 }
