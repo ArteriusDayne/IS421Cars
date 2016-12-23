@@ -37,6 +37,6 @@
 			<a  href="{{ action('PagesController@thankyou') }}" class="btn btn-primary" type="submit" >Submit</a>
 		</center>
 		</div>
-	
+  </div>
 @stop
 

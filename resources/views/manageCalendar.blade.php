@@ -86,5 +86,5 @@ $calendar_events=DB::table('calendar_events')->get();
                 <a class="btn btn-success" href="{{ route('calendar_events.create') }}">Create</a>
             @endif
         </div>
-
     </div>
+    
